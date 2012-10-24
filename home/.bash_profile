@@ -24,5 +24,8 @@ else
         # Make byobu run on login
         _byobu_sourced=1 . /usr/bin/byobu-launch
 
+        # Run anacron jobs
+        /usr/sbin/anacron -t ~/.anacron/etc/anacrontab -S ~/.anacron/spool
+
     fi
 fi
