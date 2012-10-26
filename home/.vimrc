@@ -33,6 +33,9 @@ if has('multi_byte_ime') || has('xim')
 highlight CursorIM guibg=#b1d631 guifg=NONE
 endif
 
+" Make it so bash commands opened in vi use bash syntax highlighting
+au BufRead,BufNewFile bash-fc-* set filetype=sh
+
 " Fix issue with some doublewitdh characters 
 set ambiwidth=single
 
