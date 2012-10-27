@@ -1,0 +1,33 @@
+[user]
+	name = Alan
+	email = alan.rogers@nst.nintendo.com
+
+[core]
+	excludesfile = ~/.gitignore
+	editor = /usr/bin/vim
+
+[color]
+	ui = true
+
+[http]
+	sslVerify = false
+  # proxy = http://proxysg.noa.com:8080
+  #	sslCert = ~/.certs/gateway.pem
+     # SSL certificate is actually set in .bashrc 
+     # since .gitconfig won't expand ~/ or $HOME
+
+[merge]
+	keepBackup = false;
+	tool = p4merge
+
+[mergetool "p4merge"]
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+
+[diff]
+  # external = p4diff
+
+[difftool]
+	prompt = false
