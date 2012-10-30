@@ -99,6 +99,9 @@ else
             . `brew --prefix`/etc/bash_completion
         fi
 
+        # Alias to launch MacVim better with mvim
+        alias mvim='open -a MacVim'
+
         # Alias to launch p4merge from command line
         alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
 
