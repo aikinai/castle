@@ -1,16 +1,22 @@
 ######## MULTI-PLATFORM ITEMS #################################################
 
-    # Use Vim's less script as an alias for less
-    VLESS=$(find /usr/share/vim -name 'less.sh')
-    if [ ! -z $VLESS ]; then
-        alias less=$VLESS
-    fi
-
     #Set Bash to vi mode
     set -o vi
 
     # Set default editor to Vim
     export EDITOR=vim
+
+    # If vimpager is installed, use that for less and all paging
+    if command -v vimpager > /dev/null; then
+        export PAGER=vimpager
+        alias less=$PAGER 
+    else
+        # Otherwise, use Vim's built-in less script
+        VLESS=$(find /usr/share/vim -name 'less.sh')
+        if [ ! -z $VLESS ]; then
+            alias less=$VLESS
+        fi
+    fi
 
     # Unicode gpg
     alias gpg='gpg2 --display-charset utf-8'
