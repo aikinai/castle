@@ -1,8 +1,10 @@
 "-----------------------------------------------------------------------------
 " Alan's own settings
 "-----------------------------------------------------------------------------
-set encoding=UTF8
-set fileencoding=UTF8
+if !exists("vimpager") 
+    set encoding=UTF8
+    set fileencoding=UTF8
+endif
 " set lines=50 columns=80 textwidth=80 linebreak
 " set lines=50 columns=80 wrapmargin=0 linebreak
 set nocompatible
