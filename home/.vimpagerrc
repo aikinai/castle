@@ -1,0 +1,5 @@
+" Don't load plugins
+set noloadplugins
+
+" Passthrough when there's less than one screen of text
+let vimpager_passthrough = 1 
