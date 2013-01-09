@@ -31,3 +31,5 @@
 
 [difftool]
 	prompt = false
+[log]
+	date = local
