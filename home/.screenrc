@@ -7,10 +7,9 @@ vbell off
 # Keep scrollback n lines
 defscrollback 1000
 
-# Change the hardstatus settings to give an window list at the bottom of the
-# screen, with the time and date and with the current window highlighted
-hardstatus             alwayslastline                                                                                                                          
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+# Set up my status line at the bottom of every frame
+# caption always "%{gb}  %{ck}%m-%d %C %{gb}  %{gb}%?%-Lw%?%{ck}%n*%f %t%?(%u)%?%{gb}%?%+Lw%?"
+caption always "%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]"
 
 term "screen-256color"
 # Terminfo and termcap for nice 256 color terminal
