@@ -5,18 +5,19 @@
 
     # Set default editor to Vim
     export EDITOR=vim
-
-    # If vimpager is installed, use that for less and all paging
-    if command -v vimpager > /dev/null; then
-        export PAGER=vimpager
-        alias less=$PAGER 
-    else
+    
+# vimpage screws up color in git output, so don't do this for now
+#     # If vimpager is installed, use that for less and all paging
+#     if command -v vimpager > /dev/null; then
+#         export PAGER=vimpager
+#         alias less=$PAGER
+#     else
         # Otherwise, use Vim's built-in less script
         VLESS=$(find /usr/share/vim -name 'less.sh')
         if [ ! -z $VLESS ]; then
             alias less=$VLESS
         fi
-    fi
+#     fi
 
     # Unicode gpg
     alias gpg='gpg2 --display-charset utf-8'
