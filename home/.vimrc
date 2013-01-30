@@ -18,8 +18,10 @@ let mapleader = ";"
 nnoremap <C-E> ,
 " Use Ricty Japanese programming font
 set guifont=Ricty\ Regular:h18
-" User Mustang colorscheme
-colorscheme Tomorrow-Night
+" Dark base16-tomorrow colors
+set background=dark
+colorscheme base16-tomorrow
+
 " Make enter to escape in insert mode
 inoremap <S-cr> <esc>
 noremap <S-cr> <esc>
