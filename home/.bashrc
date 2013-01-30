@@ -29,7 +29,7 @@
 
     # When changing directory small typos can be ignored by bash
     # for example, cd /vr/lgo/apaache would find /var/log/apache
-     shopt -s cdspell
+    shopt -s cdspell
 
     # Ignore some controlling instructions
     # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
@@ -74,6 +74,9 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
 
     # Color ls output
     alias ls='ls --color=auto -h'
+
+    # Run base16-default to set shell colors
+    ~/.scripts/base16-default.dark.sh
 
 ###############################################################################
 else
