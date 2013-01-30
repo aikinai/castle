@@ -20,7 +20,7 @@ nnoremap <C-E> ,
 set guifont=Ricty\ Regular:h18
 " Dark base16-tomorrow colors
 set background=dark
-colorscheme base16-tomorrow
+colorscheme base16-default
 
 " Make enter to escape in insert mode
 inoremap <S-cr> <esc>
