@@ -33,3 +33,5 @@
 	prompt = false
 [log]
 	date = local
+[push]
+	default = simple
