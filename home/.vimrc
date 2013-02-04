@@ -37,6 +37,17 @@ if has('multi_byte_ime') || has('xim')
 highlight CursorIM guibg=#b1d631 guifg=NONE
 endif
 
+" ---------------
+" CTRL-P SETTINGS
+" ---------------
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_show_hidden = 1
+
+set wildignore+=*.swp
+
 " Make it so bash commands opened in vi use bash syntax highlighting
 au BufRead,BufNewFile bash-fc-* set filetype=sh
 
