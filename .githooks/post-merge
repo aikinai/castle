@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Checks to see if authorized_keys file was modified in the last merge and 
+# resets the permissions to 600 if it was.
+#
+ 
+MODIFIED=`git diff --name-only HEAD@{1} | grep 'home/.ssh/authorized_keys'`
+if [ ! "$MODIFIED" = "" ]; then
+    echo ""
+    echo ".ssh/authorized_keys was modified."
+    echo "Resetting permissions to 600."
+    echo ""
+    chmod 600 home/.ssh/authorize_keys
+fi
