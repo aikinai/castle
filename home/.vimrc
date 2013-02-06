@@ -37,9 +37,36 @@ if has('multi_byte_ime') || has('xim')
 highlight CursorIM guibg=#b1d631 guifg=NONE
 endif
 
-" ---------------
-" CTRL-P SETTINGS
-" ---------------
+" --------------- "
+" VUNDLE SETTINGS "
+" ----------------"
+filetype off " required to make Vundle work; turned on later
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle; required
+Bundle 'gmarik/vundle'
+
+" My bundles
+" ----------
+Bundle 'CSApprox'
+Bundle 'ctrlp.vim'
+Bundle 'EasyMotion'
+Bundle 'fugitive.vim'
+Bundle 'Gundo'
+Bundle 'L9'
+Bundle 'Markdown'
+Bundle 'SuperTab'
+Bundle 'surround.vim'
+Bundle 'The-NERD-Commenter'
+
+filetype plugin indent on     " required!
+
+
+" --------------- "
+" CTRL-P SETTINGS "
+" --------------- "
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -242,7 +269,7 @@ set hidden
 set cpoptions=ces$
 
 " Set the status line the way Derek likes it
-" set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
+set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 
 " tell VIM to always put a status line in, even if there is only one window
 set laststatus=2
