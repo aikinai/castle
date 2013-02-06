@@ -1,4 +1,4 @@
 home/.ssh/id_rsa
-home/.ssh/authorized_keys
 home/.ssh/id_rsa.pub
+home/.ssh/authorized_keys
 home/.ssh/known_hosts
