@@ -2,3 +2,4 @@ home/.ssh/id_rsa
 home/.ssh/id_rsa.pub
 home/.ssh/authorized_keys
 home/.ssh/known_hosts
+home/.vim/bundle/.vundle
