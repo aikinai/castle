@@ -37,6 +37,20 @@ if has('multi_byte_ime') || has('xim')
 highlight CursorIM guibg=#b1d631 guifg=NONE
 endif
 
+" ---------------------- "
+" NEOCOMPLCACHE SETTINGS "
+" -----------------------"
+" Enable NeoComplCache
+let g:neocomplcache_enable_at_startup = 1
+" Disable auto-complete
+let g:neocomplcache_disable_auto_complete = 1
+" Enable tab-completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+function! s:check_back_space()
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+endfunction
+
 " --------------- "
 " VUNDLE SETTINGS "
 " ----------------"
@@ -57,6 +71,7 @@ Bundle 'fugitive.vim'
 Bundle 'Gundo'
 Bundle 'L9'
 Bundle 'Markdown'
+Bundle 'neocomplcache'
 Bundle 'SuperTab'
 Bundle 'surround.vim'
 Bundle 'The-NERD-Commenter'
