@@ -72,7 +72,6 @@ Bundle 'Gundo'
 Bundle 'L9'
 Bundle 'Markdown'
 Bundle 'neocomplcache'
-Bundle 'SuperTab'
 Bundle 'surround.vim'
 Bundle 'The-NERD-Commenter'
 
