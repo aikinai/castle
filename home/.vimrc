@@ -64,7 +64,6 @@ Bundle 'gmarik/vundle'
 
 " My bundles
 " ----------
-Bundle 'CSApprox'
 Bundle 'ctrlp.vim'
 Bundle 'EasyMotion'
 Bundle 'fugitive.vim'
