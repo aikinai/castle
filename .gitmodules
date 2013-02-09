@@ -2,10 +2,6 @@
 	path = home/.vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
 	ignore = dirty
-[submodule "home/.vim/bundle/CSApprox"]
-	path = home/.vim/bundle/CSApprox
-	url = https://github.com/vim-scripts/CSApprox.git
-	ignore = dirty
 [submodule "home/.vim/bundle/EasyMotion"]
 	path = home/.vim/bundle/EasyMotion
 	url = https://github.com/vim-scripts/EasyMotion.git
