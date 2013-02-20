@@ -91,7 +91,8 @@ set wildignore+=*.swp
 " Make it so bash commands opened in vi use bash syntax highlighting
 au BufRead,BufNewFile bash-fc-* set filetype=sh
 
-" Fix issue with some doublewitdh characters 
+" Use double-width for ambiguous-width characters
+" This seems safest for Ricty
 set ambiwidth=double
 
 " Command-j for window movement in OS X
