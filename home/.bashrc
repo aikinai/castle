@@ -6,9 +6,6 @@
     # Set default editor to Vim
     export EDITOR=vim
 
-    # Run base16-default to set shell colors
-    ~/.scripts/base16-default.dark.sh
-    
 # vimpage screws up color in git output, so don't do this for now
 #     # If vimpager is installed, use that for less and all paging
 #     if command -v vimpager > /dev/null; then
@@ -75,6 +72,9 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
     # If not running interactively, don't do anything
     [[ "$-" != *i* ]] && return
 
+    # Run base16-default to set shell colors
+    ~/.scripts/base16-default.dark.sh
+
     # Color ls output
     alias ls='ls --color=auto -h'
 
@@ -94,6 +94,9 @@ else
     if [[ "$OSTYPE" == darwin* ]]; then
     ######## OS X-ONLY ITEMS ##################################################
 
+        # Run base16-default to set shell colors
+        ~/.scripts/base16-default.dark.sh
+    
         # Color and prefixes in ls
         alias ls='ls -Gh'
 
