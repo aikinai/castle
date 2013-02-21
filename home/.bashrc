@@ -1,10 +1,13 @@
 ######## MULTI-PLATFORM ITEMS #################################################
 
-    #Set Bash to vi mode
+    # Set Bash to vi mode
     set -o vi
 
     # Set default editor to Vim
     export EDITOR=vim
+
+    # Run base16-default to set shell colors
+    ~/.scripts/base16-default.dark.sh
     
 # vimpage screws up color in git output, so don't do this for now
 #     # If vimpager is installed, use that for less and all paging
@@ -74,9 +77,6 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
 
     # Color ls output
     alias ls='ls --color=auto -h'
-
-    # Run base16-default to set shell colors
-    ~/.scripts/base16-default.dark.sh
 
 ###############################################################################
 else
