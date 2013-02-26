@@ -77,6 +77,11 @@ Bundle 'The-NERD-Commenter'
 
 filetype plugin indent on     " required!
 
+" ---------------------- "
+" NERDCOMMENTER SETTINGS "
+" ---------------------- "
+let NERDSpaceDelims = 1
+
 
 " --------------- "
 " CTRL-P SETTINGS "
