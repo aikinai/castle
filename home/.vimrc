@@ -16,8 +16,6 @@ set display=lastline
 let mapleader = ";"
 " Use CTRL-E to replace the original comma mapping
 nnoremap <C-E> ,
-" Use Ricty Japanese programming font
-set guifont=Ricty\ Regular:h18
 " Dark base16-tomorrow colors
 set background=dark
 let base16colorspace=256 " Needed for all colors in Base16
@@ -40,7 +38,7 @@ endif
 
 " ---------------------- "
 " NEOCOMPLCACHE SETTINGS "
-" -----------------------"
+" ---------------------- "
 " Enable NeoComplCache
 let g:neocomplcache_enable_at_startup = 1
 " Disable auto-complete
@@ -52,30 +50,45 @@ function! s:check_back_space()
     return !col || getline('.')[col - 1] =~ '\s'
 endfunction
 
-" --------------- "
-" VUNDLE SETTINGS "
-" ----------------"
-filetype off " required to make Vundle work; turned on later
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if has("gui_running")
+    " ----------------- "
+    " GUI-ONLY SETTINGS "
+    " ----------------- "
+    set lines=50 columns=80
+    " Use Ricty Japanese programming font
+    set guifont=Ricty\ Regular:h14
+else
+    " --------------------- "
+    " CONSOLE-ONLY SETTINGS "
+    " --------------------- "
 
-" Let Vundle manage Vundle; required
-Bundle 'gmarik/vundle'
+    " --------------- "
+    " VUNDLE SETTINGS "
+    " --------------- "
+    filetype off " Required to make Vundle work; turned on later
 
-" My bundles
-" ----------
-Bundle 'ctrlp.vim'
-Bundle 'EasyMotion'
-Bundle 'fugitive.vim'
-Bundle 'Gundo'
-Bundle 'L9'
-Bundle 'Markdown'
-Bundle 'neocomplcache'
-Bundle 'surround.vim'
-Bundle 'The-NERD-Commenter'
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
 
-filetype plugin indent on     " required!
+    " Let Vundle manage Vundle; required
+    Bundle 'gmarik/vundle'
+
+    " My bundles
+    " ----------
+    Bundle 'ctrlp.vim'
+    Bundle 'EasyMotion'
+    Bundle 'fugitive.vim'
+    Bundle 'Gundo'
+    Bundle 'L9'
+    Bundle 'Markdown'
+    Bundle 'neocomplcache'
+    Bundle 'surround.vim'
+    Bundle 'The-NERD-Commenter'
+
+    filetype plugin indent on " Required!
+
+endif
 
 " ---------------------- "
 " NERDCOMMENTER SETTINGS "
