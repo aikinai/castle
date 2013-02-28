@@ -90,6 +90,7 @@ else
     Bundle 'Markdown'
     Bundle 'neocomplcache'
     Bundle 'surround.vim'
+    Bundle 'Tabular'
     Bundle 'The-NERD-Commenter'
 
     filetype plugin indent on " Required!
