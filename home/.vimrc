@@ -56,8 +56,14 @@ if has("gui_running")
     " GUI-ONLY SETTINGS "
     " ----------------- "
     set lines=50 columns=80
-    " Use Ricty Japanese programming font
-    set guifont=Ricty\ Regular:h14
+
+    if has("win32")
+        " Use Ricty 14pt for Windows
+        set guifont=Ricty\ Regular:h14
+    else
+        " Use Ricty 18pt for OS X
+        set guifont=Ricty\ Regular:h18
+    endif
 else
     " --------------------- "
     " CONSOLE-ONLY SETTINGS "
