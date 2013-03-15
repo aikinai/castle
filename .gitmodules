@@ -38,3 +38,6 @@
 	path = home/.vim/bundle/neocomplcache
 	url = https://github.com/vim-scripts/neocomplcache.git
 	ignore = dirty
+[submodule "home/.vim/bundle/tabular"]
+	path = home/.vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
