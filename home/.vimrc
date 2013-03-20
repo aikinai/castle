@@ -121,6 +121,9 @@ au BufRead,BufNewFile bash-fc-* set filetype=sh
 " This seems safest for Ricty
 set ambiwidth=double
 
+" Set universal spell file
+set spellfile=~/.vim/spell/en.utf-8.add
+
 " Command-j for window movement in OS X
 noremap <D-j> <C-w>
 
