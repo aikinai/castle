@@ -264,23 +264,6 @@ endif
 endfunction
 
 "-----------------------------------------------------------------------------
-" Alan's replacements
-"-----------------------------------------------------------------------------
-iab endash –
-iab bullet •
-iab ns <BS><C-q>160
-" iab F10 <BS>Flash<C-q>16010
-" iab F11 <BS>Flash<C-q>16011
-" iab A3 <BS>AIR<C-q>1603
-iab WU <BS>Wii<C-q>160U
-" iab TF <BS>TouchFactor
-iab <en> <English translation>
-iab <jp> ＜日本語訳＞
-iab kakeru <BS>×
-iab cross <BS>⨯
-iab SA <BS>Studio<C-q>160A
-
-"-----------------------------------------------------------------------------
 " Alan's Python settings
 "-----------------------------------------------------------------------------
 " Python folding
