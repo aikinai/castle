@@ -66,8 +66,14 @@
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
     # Set up a cool prompt
+    function parse_git_branch {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo "("${ref#refs/heads/}")"
+    }
+
     export PS1='\[\033k\033\\\]'
-    export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w\n"$PS1'\$ '
+  # export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w\n"$PS1'\$ '
+    export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w \033[38;05;16m\]\$(parse_git_branch)\033[0m\]\n"$PS1'\$ '
 
 ###############################################################################
 if [[ "$OSTYPE" == 'cygwin' ]]; then
