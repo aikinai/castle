@@ -65,12 +65,6 @@
     # Make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-    if [[ $- == *i* ]] # If this is an interactive shell
-    then
-        # Run base16-default to set shell colors
-        ~/.scripts/base16-default.dark.sh
-    fi
-
     # Set up a cool prompt
     function parse_git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -90,6 +84,12 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
 
     # Color ls output
     alias ls='ls --color=auto -h'
+
+    if [[ $- == *i* ]] # If this is an interactive shell
+    then
+        # Run base16-default to set shell colors
+        ~/.scripts/base16-default.dark.sh
+    fi
 
 ###############################################################################
 else
@@ -114,6 +114,12 @@ else
         # Needs brew bash-completion package installed
         if [ -f `brew --prefix`/etc/bash_completion ]; then
             . `brew --prefix`/etc/bash_completion
+        fi
+
+        if [[ $- == *i* ]] # If this is an interactive shell
+        then
+            # Run base16-default to set shell colors
+            ~/.scripts/base16-default.dark.sh
         fi
 
         # Alias to launch MacVim better with mvim
