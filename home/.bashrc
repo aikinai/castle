@@ -65,6 +65,12 @@
     # Make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+    if [[ $- == *i* ]] # If this is an interactive shell
+    then
+        # Run base16-default to set shell colors
+        ~/.scripts/base16-default.dark.sh
+    fi
+
     # Set up a cool prompt
     function parse_git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -81,9 +87,6 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
 
     # If not running interactively, don't do anything
     [[ "$-" != *i* ]] && return
-
-    # Run base16-default to set shell colors
-    ~/.scripts/base16-default.dark.sh
 
     # Color ls output
     alias ls='ls --color=auto -h'
@@ -103,9 +106,6 @@ else
     ###########################################################################
     if [[ "$OSTYPE" == darwin* ]]; then
     ######## OS X-ONLY ITEMS ##################################################
-
-        # Run base16-default to set shell colors
-        ~/.scripts/base16-default.dark.sh
     
         # Color and prefixes in ls
         alias ls='ls -Gh'
