@@ -18,10 +18,6 @@
 	path = home/.vim/bundle/Markdown
 	url = https://github.com/vim-scripts/Markdown.git
 	ignore = dirty
-[submodule "home/.vim/bundle/The-NERD-Commenter"]
-	path = home/.vim/bundle/The-NERD-Commenter
-	url = https://github.com/vim-scripts/The-NERD-Commenter.git
-	ignore = dirty
 [submodule "home/.vim/bundle/ctrlp.vim"]
 	path = home/.vim/bundle/ctrlp.vim
 	url = https://github.com/vim-scripts/ctrlp.vim.git
@@ -41,3 +37,8 @@
 [submodule "home/.vim/bundle/tabular"]
 	path = home/.vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+	ignore = dirty
+[submodule "home/.vim/bundle/nerdcommenter"]
+	path = home/.vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+	ignore = dirty
