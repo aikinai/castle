@@ -91,7 +91,7 @@ else
     Bundle 'neocomplcache'
     Bundle 'surround.vim'
     Bundle 'godlygeek/tabular'
-    Bundle 'The-NERD-Commenter'
+    Bundle 'scrooloose/nerdcommenter'
 
     filetype plugin indent on " Required!
 
