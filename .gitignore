@@ -6,3 +6,4 @@ home/.vim/bundle/.vundle
 home/.vim/backup/
 home/.vim/undo/
 home/.vim/viminfo
+home/.vim/swap
