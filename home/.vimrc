@@ -91,17 +91,16 @@ else
     Bundle 'neocomplcache'
     Bundle 'surround.vim'
     Bundle 'godlygeek/tabular'
-    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'tomtom/tcomment_vim'
 
     filetype plugin indent on " Required!
 
 endif
 
-" ---------------------- "
-" NERDCOMMENTER SETTINGS "
-" ---------------------- "
-let NERDSpaceDelims = 1
-
+" ----------------- "
+" TCOMMENT SETTINGS "
+" ----------------- "
+let g:tcommentOptions = {'col': 1}
 
 " --------------- "
 " CTRL-P SETTINGS "
