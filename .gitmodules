@@ -40,5 +40,4 @@
 	ignore = dirty
 [submodule "home/.vim/bundle/nerdcommenter"]
 	path = home/.vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-	ignore = dirty
+	url = https://github.com/aikinai/nerdcommenter.git
