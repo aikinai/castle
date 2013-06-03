@@ -10,5 +10,5 @@ if [ ! "$MODIFIED" = "" ]; then
     echo ".ssh/authorized_keys was modified."
     echo "Resetting permissions to 600."
     echo ""
-    chmod 600 home/.ssh/authorize_keys
+    chmod 600 home/.ssh/authorized_keys
 fi
