@@ -87,7 +87,7 @@ else
     Bundle 'fugitive.vim'
     Bundle 'Gundo'
     Bundle 'L9'
-    Bundle 'Markdown'
+    Bundle 'tpope/vim-markdown'
     Bundle 'neocomplcache'
     Bundle 'surround.vim'
     Bundle 'godlygeek/tabular'
