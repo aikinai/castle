@@ -304,7 +304,10 @@ set shellslash
 " Setup shells for unix and Windows (work)
 if has("win32")
     " Set up general Windows stuff
-    " source $VIMRUNTIME/vimrc_example.vim
+    if has("gui_running")
+        let $HOME = 'C:\Users\alanro01'
+        cd $HOME
+    endif
     source $VIMRUNTIME/mswin.vim
     behave mswin
     set shell=C:/cygwin/bin/bash
