@@ -83,7 +83,7 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
     [[ "$-" != *i* ]] && return
 
     # Color ls output
-    alias ls='ls --color=auto -h'
+    alias ls='ls --color=auto -h --ignore="[NTUSER|ntuser]*"'
 
     if [[ $- == *i* ]] # If this is an interactive shell
     then
