@@ -131,6 +131,8 @@ else
 
         # Add GNU coreutils to default path
         PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+        # Add GNU coreutils to defaul man path
+        MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 
     fi
     ###########################################################################
