@@ -108,7 +108,8 @@ else
     ######## OS X-ONLY ITEMS ##################################################
     
         # Color and prefixes in ls
-        alias ls='ls -Gh'
+        #alias ls='ls -Gh'
+        alias ls='ls -h --color=auto'
 
         # Advanced Bash completion
         # Needs brew bash-completion package installed
@@ -127,6 +128,9 @@ else
 
         # Alias to launch p4merge from command line
         alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
+
+        # Add GNU coreutils to default path
+        PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
     fi
     ###########################################################################
