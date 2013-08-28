@@ -130,9 +130,9 @@ else
         alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
 
         # Add GNU coreutils to default path
-        PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+        export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
         # Add GNU coreutils to defaul man path
-        MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+        export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
     fi
     ###########################################################################
