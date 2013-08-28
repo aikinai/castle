@@ -277,15 +277,6 @@ set completeopt=menuone,longest,preview
 "-----------------------------------------------------------------------------
 " Global Stuff
 "-----------------------------------------------------------------------------
-" Get pathogen up and running
-filetype off 
-call pathogen#infect()
-"call pathogen#helptags()
-
-" Set filetype stuff to on
-filetype on
-filetype plugin on
-filetype indent on
 
 " Tabstops are 4 spaces
 set tabstop=4
@@ -321,12 +312,6 @@ else
     set shell=bash
   " set wildignorecase
 endif
-
-" Make command line two lines high
-"set ch=2
-
-" Set visual bell
-"set vb
 
 " Allow backspacing over indent, eol, and the start of an insert
 set backspace=2
