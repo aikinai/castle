@@ -92,6 +92,7 @@ else
     Bundle 'surround.vim'
     Bundle 'godlygeek/tabular'
     Bundle 'tomtom/tcomment_vim'
+    Bundle 'vim-scripts/Align'
 
     filetype plugin indent on " Required!
 
