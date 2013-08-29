@@ -16,10 +16,10 @@ set display=lastline
 let mapleader = ";"
 " Use CTRL-E to replace the original comma mapping
 nnoremap <C-E> ,
-" Dark base16-tomorrow colors
+
 set background=dark
 let base16colorspace=256 " Needed for all colors in Base16
-colorscheme base16-default
+colorscheme base16-monokai
 
 " Make enter to escape in insert mode
 inoremap <S-cr> <esc>
