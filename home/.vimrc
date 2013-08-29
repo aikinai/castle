@@ -419,8 +419,8 @@ set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
 " lines from the bottom
 set scrolloff=10
 
-" Allow the cursor to go in to invalid places
-" set virtualedit=all
+" Allow the cursor to go in to invalid places in visual block mode
+set virtualedit=block
 
 " Disable encryption (:X)
 set key=
