@@ -88,7 +88,7 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
     if [[ $- == *i* ]] # If this is an interactive shell
     then
         # Run base16-monokai to set shell colors
-        ~/.scripts/colors/base16-monokai.dark.GenericRGB.sh
+        ~/.scripts/colors/base16-monokai.dark.sh
     fi
 
 ###############################################################################
