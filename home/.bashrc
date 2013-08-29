@@ -87,8 +87,8 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
 
     if [[ $- == *i* ]] # If this is an interactive shell
     then
-        # Run base16-default to set shell colors
-        ~/.scripts/base16-default.dark.sh
+        # Run base16-monokai to set shell colors
+        ~/.scripts/colors/base16-monokai.dark.GenericRGB.sh
     fi
 
 ###############################################################################
@@ -119,8 +119,8 @@ else
 
         if [[ $- == *i* ]] # If this is an interactive shell
         then
-            # Run base16-default to set shell colors
-            ~/.scripts/base16-default.dark.sh
+            # Run base16-monokai to set shell colors
+            ~/.scripts/colors/base16-monokai.dark.GenericRGB.sh
         fi
 
         # Alias to launch MacVim better with mvim
