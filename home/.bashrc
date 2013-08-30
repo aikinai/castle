@@ -1,5 +1,8 @@
 ######## MULTI-PLATFORM ITEMS #################################################
 
+    # If not running interactively, don't do anything
+    [ -z "$PS1" ] && return
+
     # Set Bash to vi mode
     set -o vi
 
@@ -75,19 +78,27 @@
   # export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w\n"$PS1'\$ '
     export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w \033[38;05;17m\]\$(parse_git_branch)\033[0m\]\n"$PS1'\$ '
 
+    # Set flag if this is a remote session
+    # (Code from http://unix.stackexchange.com/a/9607)
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        REMOTE_SESSION=true
+    else
+        case $(ps -o comm= -p $PPID) in
+            sshd|*/sshd) REMOTE_SESSION=true;;
+        esac
+    fi
+
 ###############################################################################
 if [[ "$OSTYPE" == 'cygwin' ]]; then
 ######## WINDOWS-ONLY ITEMS ###################################################
 
-    # If not running interactively, don't do anything
-    [[ "$-" != *i* ]] && return
-
     # Color ls output
     alias ls='ls --color=auto -h --ignore="[NTUSER|ntuser]*"'
 
-    if [[ $- == *i* ]] # If this is an interactive shell
+    # Set colors for local shells only
+    if ! [ -n "$REMOTE_SESSION" ]
     then
-        # Run base16-monokai to set shell colors
+        # Set shell colors to Base16 Monokai
         ~/.scripts/base16-monokai.dark.sh
     fi
 
@@ -117,15 +128,11 @@ else
             . `brew --prefix`/etc/bash_completion
         fi
 
-        if [[ $- == *i* ]] # If this is an interactive shell
+        # Set colors for local shells only
+        if ! [ -n "$REMOTE_SESSION" ]
         then
-            if [[ "$HOSTNAME" == NST* ]]; then # If on my Mac at work
-                # Use Monokai colors adjusted for work color profile
-                ~/.scripts/base16-monokai.dark.NST3728.sh
-            else
-                # Use original Monokai colors for other Macs
-                ~/.scripts/base16-monokai.dark.MBA.sh
-            fi
+            # Use Monokai with profile-adjusted colors
+            ~/.scripts/base16-monokai.iTerm.sh
         fi
 
         # Alias to launch MacVim better with mvim
