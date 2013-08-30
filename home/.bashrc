@@ -124,7 +124,7 @@ else
                 ~/.scripts/base16-monokai.dark.NST3728.sh
             else
                 # Use original Monokai colors for other Macs
-                ~/.scripts/base16-monokai.dark.sh
+                ~/.scripts/base16-monokai.dark.MBA.sh
             fi
         fi
 
