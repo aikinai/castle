@@ -119,8 +119,13 @@ else
 
         if [[ $- == *i* ]] # If this is an interactive shell
         then
-            # Run base16-monokai to set shell colors
-            ~/.scripts/base16-monokai.dark.GenericRGB.sh
+            if [[ "$HOSTNAME" == NST* ]]; then # If on my Mac at work
+                # Use Monokai colors adjusted for work color profile
+                ~/.scripts/base16-monokai.dark.NST3728.sh
+            else
+                # Use original Monokai colors for other Macs
+                ~/.scripts/base16-monokai.dark.sh
+            fi
         fi
 
         # Alias to launch MacVim better with mvim
