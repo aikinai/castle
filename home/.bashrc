@@ -9,18 +9,10 @@
     # Set default editor to Vim
     export EDITOR=vim
 
-# vimpage screws up color in git output, so don't do this for now
-#     # If vimpager is installed, use that for less and all paging
-#     if command -v vimpager > /dev/null; then
-#         export PAGER=vimpager
-#         alias less=$PAGER
-#     else
-        # Otherwise, use Vim's built-in less script
-        VLESS=$(find /usr/share/vim -name 'less.sh')
-        if [ ! -z $VLESS ]; then
-            alias less=$VLESS
-        fi
-#     fi
+    VLESS=$(find /usr/share/vim -name 'less.sh')
+    if [ ! -z $VLESS ]; then
+        alias less=$VLESS
+    fi
 
     # Unicode gpg
     alias gpg='gpg2 --display-charset utf-8'
@@ -68,14 +60,16 @@
     # Make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-    # Set up a cool prompt
+    # Displays current git branch for prompt
     function parse_git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
     echo "("${ref#refs/heads/}")"
     }
 
+    # Set up prompt as below (with colors)
+    # User@Host /Path (git branch)
+    # $
     export PS1='\[\033k\033\\\]'
-  # export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w\n"$PS1'\$ '
     export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w \033[38;05;17m\]\$(parse_git_branch)\033[0m\]\n"$PS1'\$ '
 
     # Set flag if this is a remote session
@@ -93,6 +87,7 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
 ######## WINDOWS-ONLY ITEMS ###################################################
 
     # Color ls output
+    # Ignore NTUSER registry files
     alias ls='ls --color=auto -h --ignore="[NTUSER|ntuser]*"'
 
     # Set colors for local shells only
@@ -106,8 +101,8 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
 else
 ######## UNIX-ONLY ITEMS ######################################################
 
-    # If not running interactively, don't do anything
-    [ -z "$PS1" ] && return
+    # Color and human-readable prefixes in ls
+    alias ls='ls -h --color=auto'
 
     # Enable programmable completion features
     if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -118,10 +113,6 @@ else
     if [[ "$OSTYPE" == darwin* ]]; then
     ######## OS X-ONLY ITEMS ##################################################
     
-        # Color and prefixes in ls
-        #alias ls='ls -Gh'
-        alias ls='ls -h --color=auto'
-
         # Advanced Bash completion
         # Needs brew bash-completion package installed
         if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -150,9 +141,6 @@ else
     ###########################################################################
     if [[ "$OSTYPE" == linux* ]]; then
     ######## LINUX-ONLY ITEMS #################################################
-
-        # Color ls output
-        alias ls='ls --color=auto -h'
 
         # Set variable identifying the chroot you work in
         # (used in the prompt below)
