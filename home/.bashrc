@@ -76,10 +76,6 @@
     # (Code from http://unix.stackexchange.com/a/9607)
     if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
         REMOTE_SESSION=true
-    else
-        case $(ps -o comm= -p $PPID) in
-            sshd|*/sshd) REMOTE_SESSION=true;;
-        esac
     fi
 
 ###############################################################################
