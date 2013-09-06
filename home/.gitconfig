@@ -35,3 +35,5 @@
 	date = local
 [push]
 	default = simple
+[git-p4]
+	skipSubmitEdit = true
