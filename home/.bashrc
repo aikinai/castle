@@ -1,7 +1,15 @@
 ######## MULTI-PLATFORM ITEMS #################################################
 
-    # If not running interactively, don't do anything
-    [ -z "$PS1" ] && return
+    # Set flag if this sessions is interactive
+    if [ -n "$PS1" ]; then
+        INTERACTIVE_SESSION=true
+    fi
+
+    # Set flag if this is a remote session
+    # (Code from http://unix.stackexchange.com/a/9607)
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        REMOTE_SESSION=true
+    fi
 
     # Set Bash to vi mode
     set -o vi
@@ -60,22 +68,21 @@
     # Make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-    # Displays current git branch for prompt
-    function parse_git_branch {
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo "("${ref#refs/heads/}")"
-    }
+    ########### THINGS TO SKIP FOR NON-INTERACTIVE SESSIONS ##########
+    if $INTERACTIVE_SESSION; then
 
-    # Set up prompt as below (with colors)
-    # User@Host /Path (git branch)
-    # $
-    export PS1='\[\033k\033\\\]'
-    export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w \033[38;05;17m\]\$(parse_git_branch)\033[0m\]\n"$PS1'\$ '
+        # Displays current git branch for prompt
+        function parse_git_branch {
+        ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+        echo "("${ref#refs/heads/}")"
+        }
 
-    # Set flag if this is a remote session
-    # (Code from http://unix.stackexchange.com/a/9607)
-    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-        REMOTE_SESSION=true
+        # Set up prompt as below (with colors)
+        # User@Host /Path (git branch)
+        # $
+        export PS1='\[\033k\033\\\]'
+        export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w \033[38;05;17m\]\$(parse_git_branch)\033[0m\]\n"$PS1'\$ '
+
     fi
 
 ###############################################################################
@@ -86,9 +93,8 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
     # Ignore NTUSER registry files
     alias ls='ls --color=auto -h --ignore="[NTUSER|ntuser]*"'
 
-    # Set colors for local shells only
-    if ! [ -n "$REMOTE_SESSION" ]
-    then
+    # Set colors for local, interactive shells only
+    if [[ ( $REMOTE_SESSION != true ) && $INTERACTIVE_SESSION ]]; then
         # Set shell colors to Base16 Monokai
         ~/.scripts/base16-monokai.dark.sh
     fi
@@ -115,9 +121,8 @@ else
             . `brew --prefix`/etc/bash_completion
         fi
 
-        # Set colors for local shells only
-        if ! [ -n "$REMOTE_SESSION" ]
-        then
+        # Set colors for local, interactive shells only
+        if [[ ( $REMOTE_SESSION != true ) && $INTERACTIVE_SESSION ]]; then
             # Use Monokai with profile-adjusted colors
             ~/.scripts/base16-monokai.iTerm.sh
         fi
