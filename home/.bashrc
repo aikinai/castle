@@ -1,6 +1,6 @@
 ######## MULTI-PLATFORM ITEMS #################################################
 
-    # Set flag if this sessions is interactive
+    # Set flag if this session is interactive
     if [ -n "$PS1" ]; then
         INTERACTIVE_SESSION=true
     fi
