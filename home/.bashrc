@@ -117,8 +117,8 @@ else
     
         # Advanced Bash completion
         # Needs brew bash-completion package installed
-        if [ -f `brew --prefix`/etc/bash_completion ]; then
-            . `brew --prefix`/etc/bash_completion
+        if [ -f /usr/local/etc/bash_completion ]; then
+            . /usr/local/etc/bash_completion
         fi
 
         # Set colors for local, interactive shells only
@@ -134,9 +134,9 @@ else
         alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
 
         # Add GNU coreutils to default path
-        export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
         # Add GNU coreutils to defaul man path
-        export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+        export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
     fi
     ###########################################################################
