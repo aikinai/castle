@@ -91,7 +91,7 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
 
     # Color ls output
     # Ignore NTUSER registry files
-    alias ls='ls --color=auto -h --ignore="[NTUSER|ntuser]*"'
+    alias ls='ls --color=auto -h --ignore="NTUSER*" --ignore="ntuser*"'
 
     # Set colors for local, interactive shells only
     if [[ ( $REMOTE_SESSION != true ) && $INTERACTIVE_SESSION ]]; then
