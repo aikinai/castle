@@ -163,9 +163,5 @@ if [[ "$HOSTNAME" == NST* ]]; then
 
 source ~/.bashrc.nst
 
-    # Set up Perforce client and login
-    export P4CONFIG=~/.p4config
-    echo 'Takesan!' | p4 login &> /dev/null
-
 ###############################################################################
 fi
