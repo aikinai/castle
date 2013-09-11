@@ -11,10 +11,6 @@
 
 [http]
 	sslVerify = false
-  # proxy = http://proxysg.noa.com:8080
-  #	sslCert = ~/.certs/gateway.pem
-     # SSL certificate is actually set in .bashrc 
-     # since .gitconfig won't expand ~/ or $HOME
 
 [merge]
 	keepBackup = false;
