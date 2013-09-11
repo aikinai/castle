@@ -138,6 +138,11 @@ else
         # Add GNU coreutils to defaul man path
         export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+        # Replace cal with gcal if it's installed
+        if [ -f /usr/local/bin/gcal ]; then
+            alias cal='gcal'
+        fi
+
     fi
     ###########################################################################
     if [[ "$OSTYPE" == linux* ]]; then
