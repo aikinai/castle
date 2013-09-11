@@ -1,0 +1,10 @@
+# This file sets all readline applications to use vi keybindings
+# and remaps jj to escape
+
+set editing-mode vi
+
+$if mode=vi
+    # Insert Mode
+    set keymap vi-insert
+    "jj": vi-movement-mode
+$endif
