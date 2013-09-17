@@ -46,3 +46,6 @@
 	path = home/.vim/bundle/Align
 	url = https://github.com/vim-scripts/Align.git
 	ignore = dirty
+[submodule "home/.vim/bundle/fencview"]
+	path = home/.vim/bundle/fencview
+	url = https://github.com/mbbill/fencview.git

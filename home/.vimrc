@@ -93,6 +93,7 @@ else
     Bundle 'godlygeek/tabular'
     Bundle 'tomtom/tcomment_vim'
     Bundle 'vim-scripts/Align'
+    Bundle 'mbbill/fencview'
 
     filetype plugin indent on " Required!
 
