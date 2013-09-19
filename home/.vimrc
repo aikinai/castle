@@ -371,7 +371,7 @@ set cpoptions=ces$
 
 " Set the status line the way Derek likes it
 " Plugins aren't registering on Gvim, so skip for Windows GUIs
-if !(has("win32") && has("gui_running"))
+if !has("gui_running")
 set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 endif
 
