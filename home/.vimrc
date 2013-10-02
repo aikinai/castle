@@ -69,37 +69,38 @@ else
     " CONSOLE-ONLY SETTINGS "
     " --------------------- "
 
-    " --------------- "
-    " VUNDLE SETTINGS "
-    " --------------- "
-    filetype off " Required to make Vundle work; turned on later
-
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-
-    " Let Vundle manage Vundle; required
-    Bundle 'gmarik/vundle'
-
-    " My bundles
-    " ----------
-    Bundle 'ctrlp.vim'
-    Bundle 'EasyMotion'
-    Bundle 'fugitive.vim'
-    Bundle 'Gundo'
-    Bundle 'L9'
-    Bundle 'tpope/vim-markdown'
-    Bundle 'neocomplcache'
-    Bundle 'surround.vim'
-    Bundle 'godlygeek/tabular'
-    Bundle 'tomtom/tcomment_vim'
-    Bundle 'vim-scripts/Align'
-    Bundle 'mbbill/fencview'
-    Bundle 'elzr/vim-json'
-    Bundle 'scrooloose/syntastic'
-
-    filetype plugin indent on " Required!
 
 endif
+
+" --------------- "
+" VUNDLE SETTINGS "
+" --------------- "
+filetype off " Required to make Vundle work; turned on later
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle; required
+Bundle 'gmarik/vundle'
+
+" My bundles
+" ----------
+Bundle 'ctrlp.vim'
+Bundle 'EasyMotion'
+Bundle 'fugitive.vim'
+Bundle 'Gundo'
+Bundle 'L9'
+Bundle 'tpope/vim-markdown'
+Bundle 'neocomplcache'
+Bundle 'surround.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'vim-scripts/Align'
+Bundle 'mbbill/fencview'
+Bundle 'elzr/vim-json'
+Bundle 'scrooloose/syntastic'
+
+filetype plugin indent on " Required!
 
 " ----------------- "
 " TCOMMENT SETTINGS "
@@ -376,9 +377,7 @@ set cpoptions=ces$
 
 " Set the status line the way Derek likes it
 " Plugins aren't registering on Gvim, so skip for Windows GUIs
-if !has("gui_running")
 set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
-endif
 
 " tell VIM to always put a status line in, even if there is only one window
 set laststatus=2
