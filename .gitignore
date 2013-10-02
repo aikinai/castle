@@ -3,7 +3,9 @@ home/.ssh/id_rsa.pub
 home/.ssh/authorized_keys
 home/.ssh/known_hosts
 home/.vim/bundle/.vundle
-home/.vim/backup/
-home/.vim/undo/
+home/.vim/backup
+home/.vim/undo
 home/.vim/viminfo
 home/.vim/swap
+
+home/.anacron/spool
