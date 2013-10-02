@@ -94,6 +94,8 @@ else
     Bundle 'tomtom/tcomment_vim'
     Bundle 'vim-scripts/Align'
     Bundle 'mbbill/fencview'
+    Bundle 'elzr/vim-json'
+    Bundle 'scrooloose/syntastic'
 
     filetype plugin indent on " Required!
 
