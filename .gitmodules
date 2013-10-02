@@ -49,3 +49,9 @@
 [submodule "home/.vim/bundle/fencview"]
 	path = home/.vim/bundle/fencview
 	url = https://github.com/mbbill/fencview.git
+[submodule "home/.vim/bundle/vim-json"]
+	path = home/.vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
