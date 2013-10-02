@@ -112,10 +112,13 @@ let g:tcommentOptions = {'col': 1}
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/]\.(git|hg|svn|src_jp)$',
+            \ 'file': '\v\.(exe|so|dll|psd|jpg|jpeg|png)$',
+            \ }
 
-set wildignore+=*.swp
+set wildignore+=*.swp,*.DS_Store
 
 " Make it so bash commands opened in vi use bash syntax highlighting
 au BufRead,BufNewFile bash-fc-* set filetype=sh
