@@ -8,5 +8,6 @@ thumbs.db
 Thumbs.db
 *.swp
 *.swo
+en.utf-8.add.spl
 
 .vim/.netrwhist
