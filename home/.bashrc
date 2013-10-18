@@ -65,6 +65,11 @@
     # Update the values of LINES and COLUMNS.
     shopt -s checkwinsize
 
+    # Enable ** for recursive glob if bash is new enough
+    if ((BASH_VERSINFO[0] >= 4)); then
+        shopt -s globstar
+    fi
+
     # Make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
