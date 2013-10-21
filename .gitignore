@@ -9,3 +9,6 @@ home/.vim/viminfo
 home/.vim/swap
 
 home/.anacron/spool
+
+home/.lftp/cwd_history
+home/.lftp/rl_history
