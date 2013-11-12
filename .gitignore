@@ -12,3 +12,4 @@ home/.anacron/spool
 
 home/.lftp/cwd_history
 home/.lftp/rl_history
+home/.lftp/transfer_log
