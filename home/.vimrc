@@ -72,6 +72,15 @@ else
 
 endif
 
+" -------------------- "
+" CYGWIN-ONLY SETTINGS "
+" -------------------- "
+if !(has("gui_running") && has("win32"))
+
+    " Fix permissions on viminfo file since it always gets clobbered by GVim
+    au VimLeavePre * :silent !chmod a+rw ~/.vim/viminfo
+endif
+
 " --------------- "
 " VUNDLE SETTINGS "
 " --------------- "
