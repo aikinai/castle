@@ -109,6 +109,7 @@ Bundle 'mbbill/fencview'
 Bundle 'elzr/vim-json'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 
 filetype plugin indent on " Required!
 
