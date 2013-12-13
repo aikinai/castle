@@ -58,3 +58,6 @@
 [submodule "home/.vim/bundle/ack.vim"]
 	path = home/.vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim
+[submodule "home/.vim/bundle/ag.vim"]
+	path = home/.vim/bundle/ag.vim
+	url = https://github.com/rking/ag.vim
