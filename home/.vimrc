@@ -108,6 +108,7 @@ Bundle 'vim-scripts/Align'
 Bundle 'mbbill/fencview'
 Bundle 'elzr/vim-json'
 Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
 
 filetype plugin indent on " Required!
 
