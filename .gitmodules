@@ -61,3 +61,6 @@
 [submodule "home/.vim/bundle/ag.vim"]
 	path = home/.vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim
+[submodule "home/.vim/bundle/vim-colors-solarized"]
+    path = home/.vim/bundle/vim-colors-solarized
+    url = https://github.com/altercation/vim-colors-solarized

@@ -1,6 +1,42 @@
 "-----------------------------------------------------------------------------
 " Alan's own settings
 "-----------------------------------------------------------------------------
+
+" --------------- "
+" VUNDLE SETTINGS "
+" --------------- "
+filetype off " Required to make Vundle work; turned on later
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle; required
+Bundle 'gmarik/vundle'
+
+" My bundles
+" ----------
+Bundle 'ctrlp.vim'
+Bundle 'EasyMotion'
+Bundle 'fugitive.vim'
+Bundle 'Gundo'
+Bundle 'L9'
+Bundle 'tpope/vim-markdown'
+Bundle 'neocomplcache'
+Bundle 'surround.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'vim-scripts/Align'
+Bundle 'mbbill/fencview'
+Bundle 'elzr/vim-json'
+Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
+Bundle 'altercation/vim-colors-solarized'
+
+filetype plugin indent on " Required!
+
+" General Settings
+
 if !exists("vimpager") 
     set encoding=UTF8
     set fileencoding=UTF8
@@ -17,9 +53,9 @@ let mapleader = ";"
 " Use CTRL-E to replace the original comma mapping
 nnoremap <C-E> ,
 
+" Colors
 set background=dark
-let base16colorspace=256 " Needed for all colors in Base16
-colorscheme base16-monokai
+colorscheme solarized
 
 " Make enter to escape in insert mode
 inoremap <S-cr> <esc>
@@ -80,38 +116,6 @@ if !(has("gui_running") && has("win32"))
     " Fix permissions on viminfo file since it always gets clobbered by GVim
     au VimLeavePre * :silent !chmod a+rw ~/.vim/viminfo
 endif
-
-" --------------- "
-" VUNDLE SETTINGS "
-" --------------- "
-filetype off " Required to make Vundle work; turned on later
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let Vundle manage Vundle; required
-Bundle 'gmarik/vundle'
-
-" My bundles
-" ----------
-Bundle 'ctrlp.vim'
-Bundle 'EasyMotion'
-Bundle 'fugitive.vim'
-Bundle 'Gundo'
-Bundle 'L9'
-Bundle 'tpope/vim-markdown'
-Bundle 'neocomplcache'
-Bundle 'surround.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'vim-scripts/Align'
-Bundle 'mbbill/fencview'
-Bundle 'elzr/vim-json'
-Bundle 'scrooloose/syntastic'
-Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim'
-
-filetype plugin indent on " Required!
 
 " ----------------- "
 " TCOMMENT SETTINGS "
