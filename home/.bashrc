@@ -76,6 +76,13 @@
     ########### THINGS TO SKIP FOR NON-INTERACTIVE SESSIONS ##########
     if $INTERACTIVE_SESSION; then
 
+        # Set up colors
+        DEFAULT="\[\e[0m\]"   # Revert to default
+        GREEN="\[\e[0;32m\]"  # Green
+        PURPLE="\[\e[1;35m\]" # Purple
+        TAN="\[\e[38;05;130m\]"  # Tan
+
+
         # Displays current git branch for prompt
         function parse_git_branch {
         ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -86,7 +93,7 @@
         # User@Host /Path (git branch)
         # $
         export PS1='\[\033k\033\\\]'
-        export PS1="\n\[\033[1;32m\]\u\033[0m\]@\033[1;35m\]\h\033[0m\] \w \033[38;05;17m\]\$(parse_git_branch)\033[0m\]\n"$PS1'\$ '
+        export PS1="\n${GREEN}\u${DEFAULT}@${PURPLE}\h${DEFAULT} \w ${TAN}\$(parse_git_branch)${DEFAULT}\n"$PS1'\$ '
 
         # Colorize man pages
         man() {
@@ -100,6 +107,20 @@
                 LESS_TERMCAP_us=$(printf "\e[1;32m") \
                 man "$@"
         }
+
+
+        # This is straight from Bennett's .bashrc,
+        # and I need to fix it up for myself
+        if [ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]; then
+            if [ -f ~/.dircolors ]; then
+                eval `dircolors ~/.dircolors`
+            else
+                eval `dircolors -b`
+            fi
+            alias ls='/usr/local/opt/coreutils/libexec/gnubin/ls --color=auto'
+        else
+            alias ls='ls -hG'
+        fi
 
     fi
 
@@ -139,11 +160,11 @@ else
             . /usr/local/etc/bash_completion
         fi
 
-        # Set colors for local, interactive shells only
-        if [[ ( $REMOTE_SESSION != true ) && $INTERACTIVE_SESSION ]]; then
-            # Use Monokai with profile-adjusted colors
-            ~/.scripts/base16-monokai.iTerm.sh
-        fi
+#         # Set colors for local, interactive shells only
+#         if [[ ( $REMOTE_SESSION != true ) && $INTERACTIVE_SESSION ]]; then
+#             # Use Monokai with profile-adjusted colors
+#             ~/.scripts/base16-monokai.iTerm.sh
+#         fi
 
         # Alias to launch MacVim better with mvim
         alias mvim='open -a MacVim'
