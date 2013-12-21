@@ -3,7 +3,7 @@
 # Prints out basic Bash colors
 #
 
-for LEFT in "0"
+for LEFT in "0" "1"
 do 
     for RIGHT in {30..36}
     do
