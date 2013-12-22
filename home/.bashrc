@@ -108,6 +108,15 @@
                 man "$@"
         }
 
+        # Set Solarized dircolors (ls colors)
+        if command -v dircolors &>/dev/null; then
+            if [ -f ~/.dircolors ]; then
+                eval `dircolors ~/.dircolors` # Solarized colors
+            else
+                eval `dircolors -b` # Default colors, just in case
+            fi
+        fi
+
     fi
 
 ###############################################################################
@@ -166,19 +175,6 @@ else
         # Replace cal with gcal if it's installed
         if [ -f /usr/local/bin/gcal ]; then
             alias cal='gcal'
-        fi
-
-        # This is straight from Bennett's .bashrc
-        # I need to fix it up for myself and make it multi-platform
-        if [ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]; then
-            if [ -f ~/.dircolors ]; then
-                eval `dircolors ~/.dircolors`
-            else
-                eval `dircolors -b`
-            fi
-            alias ls='/usr/local/opt/coreutils/libexec/gnubin/ls --color=auto'
-        else
-            alias ls='ls -hG'
         fi
 
     fi
