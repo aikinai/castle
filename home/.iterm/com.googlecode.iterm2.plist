@@ -2069,22 +2069,68 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSColorPanelMode</key>
+	<string>1</string>
+	<key>NSColorPickerPageableNameListDefaults</key>
+	<string>1Base16</string>
+	<key>NSColorPickerSlidersDefaults</key>
+	<string>1</string>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Downloads</string>
+	<string>~</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSTableView Columns KeyBingingTable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATCG
+		</data>
+		<string>198</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATGG
+		</data>
+		<string>302</string>
+	</array>
+	<key>NSTableView Hidden Columns KeyBingingTable</key>
+	<array/>
+	<key>NSTableView Sort Ordering KeyBingingTable</key>
+	<array/>
+	<key>NSToolbar Configuration Terminal Toolbar</key>
+	<dict>
+		<key>TB Display Mode</key>
+		<integer>1</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<integer>0</integer>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSWindow Frame NSColorPanel</key>
+	<string>858 426 214 309 0 0 1366 746 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>51 227 924 485 0 0 1280 778 </string>
+	<string>396 174 924 485 0 0 1366 746 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>222 491 384 129 0 0 1280 778 </string>
+	<string>753 361 384 129 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>535 11 745 767 0 0 1280 778 </string>
+	<string>0 4 730 742 0 0 1366 746 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>110 4 730 774 0 0 1280 778 </string>
+	<string>636 4 730 742 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>0 4 730 742 0 0 1366 746 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>1012 12 745 1166 0 0 1920 1178 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>1924 34 745 1166 1920 0 1600 1200 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>704 12 745 1166 0 0 1920 1178 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4352,7 +4398,7 @@
 					<key>Action</key>
 					<integer>26</integer>
 					<key>Text</key>
-					<string>E72B79D7-CD3C-46A0-BF9F-DA7B1C02A311</string>
+					<string>D90E5A1C-9910-4304-AC7D-D40FCAAEB675</string>
 				</dict>
 				<key>0x6f-0x100000</key>
 				<dict>
@@ -4915,7 +4961,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-12-27T22:30:19Z</date>
+	<date>2014-01-04T00:55:12Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -4961,6 +5007,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20131124</string>
+	<string>1.0.0.20131228</string>
 </dict>
 </plist>
