@@ -177,6 +177,9 @@ else
             alias cal='gcal'
         fi
 
+        # Use OS X specific config file for Tmux
+        alias tmux='tmux -f ~/.tmux.osx.conf'
+
     fi
     ###########################################################################
     if [[ "$OSTYPE" == linux* ]]; then
