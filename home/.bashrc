@@ -178,7 +178,12 @@ else
         fi
 
         # Use OS X specific config file for Tmux
-        alias tmux='tmux -f ~/.tmux.osx.conf'
+        if command -v reattach-to-user-namespace &>/dev/null; then
+            alias tmux='tmux -f ~/.tmux.osx.conf'
+        else
+            alias tmux='read -p "reattach-to-user-namespace is not installed.
+Clipboard integration and launchctl will not function in Tmux." && tmux'
+        fi
 
     fi
     ###########################################################################
