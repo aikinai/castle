@@ -127,12 +127,6 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
     # Ignore NTUSER registry files
     alias ls='ls --color=auto -h --ignore="NTUSER*" --ignore="ntuser*"'
 
-    # Set colors for local, interactive shells only
-    if [[ ( $REMOTE_SESSION != true ) && $INTERACTIVE_SESSION ]]; then
-        # Set shell colors to Base16 Monokai
-        ~/.scripts/base16-monokai.dark.sh
-    fi
-
 ###############################################################################
 else
 ######## UNIX-ONLY ITEMS ######################################################
@@ -154,12 +148,6 @@ else
         if [ -f /usr/local/etc/bash_completion ]; then
             . /usr/local/etc/bash_completion
         fi
-
-#         # Set colors for local, interactive shells only
-#         if [[ ( $REMOTE_SESSION != true ) && $INTERACTIVE_SESSION ]]; then
-#             # Use Monokai with profile-adjusted colors
-#             ~/.scripts/base16-monokai.iTerm.sh
-#         fi
 
         # Alias to launch MacVim better with mvim
         alias mvim='open -a MacVim'
