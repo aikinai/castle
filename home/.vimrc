@@ -477,9 +477,7 @@ set hlsearch
 set incsearch
 
 " Add the unnamed register to the clipboard
-if $TMUX == ''
-    set clipboard+=unnamed
-endif
+set clipboard+=unnamed
 
 " Automatically read a file that has changed on disk
 set autoread
