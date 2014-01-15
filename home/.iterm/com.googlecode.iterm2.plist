@@ -2642,6 +2642,13 @@
 					<key>Text</key>
 					<string>0x1A</string>
 				</dict>
+				<key>0xd-0x20000</key>
+				<dict>
+					<key>Action</key>
+					<integer>12</integer>
+					<key>Text</key>
+					<string>jj</string>
+				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -4961,7 +4968,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-01-13T07:25:24Z</date>
+	<date>2014-01-15T19:49:22Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -5007,6 +5014,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20131228</string>
+	<string>1.0.0.20140112</string>
 </dict>
 </plist>
