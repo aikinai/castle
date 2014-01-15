@@ -2645,9 +2645,9 @@
 				<key>0xd-0x20000</key>
 				<dict>
 					<key>Action</key>
-					<integer>12</integer>
+					<integer>11</integer>
 					<key>Text</key>
-					<string>jj</string>
+					<string>0x0A</string>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
