@@ -1,10 +1,15 @@
 # This file sets all readline applications to use vi keybindings
-# and remaps jj to escape
+# and remaps and ctrl-J (sent by shift-enter in Mintty) to escape.
+# (I also have shift-enter remapped send ctrl-J in iTerm since that is more 
+# robust and will work over SSH connections)
 
+# Set all readline applications to use vi bindings
 set editing-mode vi
 
+# Remap keys for vi-mode
 $if mode=vi
     # Insert Mode
     set keymap vi-insert
-    "jj": vi-movement-mode
+    # Ctrl-J (shift-enter) to vi escape
+    "\C-J": vi-movement-mode
 $endif
