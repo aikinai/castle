@@ -57,9 +57,16 @@ nnoremap <C-E> ,
 set background=dark
 colorscheme solarized
 
-" Make enter to escape in insert mode
+" Map shift-enter escape "
+""""""""""""""""""""""""""
+" Basic remapping for actual shift-enter (MacVim)
 inoremap <S-cr> <esc>
 noremap <S-cr> <esc>
+" Remap ctrl-J (sent by shift-enter in Mintty)
+" (I also have iTerm sending ctrl-J for shift-enter)
+inoremap <C-J> <esc>
+noremap <C-J> <esc>
+
 " Map space to scroll down ten lines
 noremap <space> 10<C-e>
 " Map shift-space to scroll up ten lines
@@ -450,9 +457,6 @@ set key=
 
 " Make the command-line completion better
 set wildmenu
-
-" Alright... let's try this out
-imap jj <esc>
 
 " Syntax coloring lines that are too long just slows down the world
 set synmaxcol=2048
