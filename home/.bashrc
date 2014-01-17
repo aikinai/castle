@@ -1,3 +1,85 @@
+###############################################################################
+if [[ "$OSTYPE" == 'cygwin' ]]; then
+######## WINDOWS-ONLY ITEMS ###################################################
+
+    # Color ls output
+    # Ignore NTUSER registry files
+    alias ls='ls --color=auto -h --ignore="NTUSER*" --ignore="ntuser*"'
+
+###############################################################################
+else
+######## UNIX-ONLY ITEMS ######################################################
+
+    # Color and human-readable prefixes in ls
+    alias ls='ls -h --color=auto'
+
+    # Enable programmable completion features
+    if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+        . /etc/bash_completion
+    fi
+
+    ###########################################################################
+    if [[ "$OSTYPE" == darwin* ]]; then
+    ######## OS X-ONLY ITEMS ##################################################
+
+        # Advanced Bash completion
+        # Needs brew bash-completion package installed
+        if [ -f /usr/local/etc/bash_completion ]; then
+            . /usr/local/etc/bash_completion
+        fi
+
+        # Alias to launch MacVim better with mvim
+        alias mvim='open -a MacVim'
+
+        # Alias to launch p4merge from command line
+        alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
+
+        # Add GNU coreutils to default path
+        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+        # Add GNU coreutils to defaul man path
+        export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+        # Replace cal with gcal if it's installed
+        if [ -f /usr/local/bin/gcal ]; then
+            alias cal='gcal'
+        fi
+
+        # Use OS X specific config file for Tmux
+        if command -v reattach-to-user-namespace &>/dev/null; then
+            alias tmux='tmux -f ~/.tmux.osx.conf'
+        else
+            alias tmux='read -p "reattach-to-user-namespace is not installed.
+Clipboard integration and launchctl will not function in Tmux." && tmux'
+        fi
+
+    fi
+    ###########################################################################
+    if [[ "$OSTYPE" == linux* ]]; then
+    ######## LINUX-ONLY ITEMS #################################################
+
+        # Set variable identifying the chroot you work in
+        # (used in the prompt below)
+        if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+            debian_chroot=$(cat /etc/debian_chroot)
+        fi
+
+        # Set a fancy prompt (non-color, unless we know we "want" color)
+        case "$TERM" in
+            xterm-color) color_prompt=yes;;
+        esac
+
+    fi
+###########################################################################
+fi
+###############################################################################
+if [[ "$HOSTNAME" == NST* ]]; then
+######## NINTENDO MACHINES ONLY ###############################################
+
+source ~/.bashrc.nst
+
+###############################################################################
+fi
+
 ######## MULTI-PLATFORM ITEMS #################################################
 
     # Set flag if this session is interactive
@@ -118,85 +200,3 @@
         fi
 
     fi
-
-###############################################################################
-if [[ "$OSTYPE" == 'cygwin' ]]; then
-######## WINDOWS-ONLY ITEMS ###################################################
-
-    # Color ls output
-    # Ignore NTUSER registry files
-    alias ls='ls --color=auto -h --ignore="NTUSER*" --ignore="ntuser*"'
-
-###############################################################################
-else
-######## UNIX-ONLY ITEMS ######################################################
-
-    # Color and human-readable prefixes in ls
-    alias ls='ls -h --color=auto'
-
-    # Enable programmable completion features
-    if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-        . /etc/bash_completion
-    fi
-
-    ###########################################################################
-    if [[ "$OSTYPE" == darwin* ]]; then
-    ######## OS X-ONLY ITEMS ##################################################
-    
-        # Advanced Bash completion
-        # Needs brew bash-completion package installed
-        if [ -f /usr/local/etc/bash_completion ]; then
-            . /usr/local/etc/bash_completion
-        fi
-
-        # Alias to launch MacVim better with mvim
-        alias mvim='open -a MacVim'
-
-        # Alias to launch p4merge from command line
-        alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
-
-        # Add GNU coreutils to default path
-        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-        # Add GNU coreutils to defaul man path
-        export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-        # Replace cal with gcal if it's installed
-        if [ -f /usr/local/bin/gcal ]; then
-            alias cal='gcal'
-        fi
-
-        # Use OS X specific config file for Tmux
-        if command -v reattach-to-user-namespace &>/dev/null; then
-            alias tmux='tmux -f ~/.tmux.osx.conf'
-        else
-            alias tmux='read -p "reattach-to-user-namespace is not installed.
-Clipboard integration and launchctl will not function in Tmux." && tmux'
-        fi
-
-    fi
-    ###########################################################################
-    if [[ "$OSTYPE" == linux* ]]; then
-    ######## LINUX-ONLY ITEMS #################################################
-
-        # Set variable identifying the chroot you work in
-        # (used in the prompt below)
-        if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-            debian_chroot=$(cat /etc/debian_chroot)
-        fi
-
-        # Set a fancy prompt (non-color, unless we know we "want" color)
-        case "$TERM" in
-            xterm-color) color_prompt=yes;;
-        esac
-
-    fi
-###########################################################################
-fi
-###############################################################################
-if [[ "$HOSTNAME" == NST* ]]; then
-######## NINTENDO MACHINES ONLY ###############################################
-
-source ~/.bashrc.nst
-
-###############################################################################
-fi
