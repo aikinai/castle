@@ -6,6 +6,9 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
     # Ignore NTUSER registry files
     alias ls='ls --color=auto -h --ignore="NTUSER*" --ignore="ntuser*"'
 
+    # Explicitly set terminal type so colors work correctly
+    export TERM="xterm-256color"
+
 ###############################################################################
 else
 ######## UNIX-ONLY ITEMS ######################################################
