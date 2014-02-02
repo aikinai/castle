@@ -44,7 +44,13 @@ endif
 " set lines=50 columns=80 textwidth=80 linebreak
 " set lines=50 columns=80 wrapmargin=0 linebreak
 set nocompatible
-set formatoptions=troqwnmMj
+
+" Only include 'j' option for Vim 7.3 or later
+if version >= 703
+    set formatoptions=troqwnmMj
+else
+    set formatoptions=troqwnmM
+endif
 
 " Show lines at the bottom of window
 set display=lastline
