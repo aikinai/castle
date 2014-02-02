@@ -203,3 +203,7 @@ fi
         fi
 
     fi
+
+# Enable Homeshick and alias 'homesick' to call Homeshick
+source ~/.homesick/repos/homeshick/homeshick.sh
+alias homesick="homeshick"
