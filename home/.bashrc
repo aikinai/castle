@@ -205,5 +205,12 @@ fi
     fi
 
 # Enable Homeshick and alias 'homesick' to call Homeshick
-source ~/.homesick/repos/homeshick/homeshick.sh
-alias homesick="homeshick"
+if [ -d ~/.homesick/repos/homeshick ]; then
+    source ~/.homesick/repos/homeshick/homeshick.sh
+    alias homesick="homeshick"
+else
+    echo -e
+    echo -e "\x1B[0;31mHomeshick not installed.\x1B[0m"
+    echo -e "Install with:"
+    echo -e "git clone git://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick"
+fi
