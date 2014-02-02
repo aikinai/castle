@@ -7,9 +7,9 @@ home/.vim/backup
 home/.vim/undo
 home/.vim/viminfo
 home/.vim/swap
-
 home/.anacron/spool
-
-home/.lftp/cwd_history
-home/.lftp/rl_history
-home/.lftp/transfer_log
+vim/bundle/.vundle
+vim/backup
+vim/undo
+vim/viminfo
+vim/swap
