@@ -12,4 +12,6 @@ $if mode=vi
     set keymap vi-insert
     # Ctrl-J (shift-enter) to vi escape
     "\C-J": vi-movement-mode
+    # Enable ctrl-l to clear screen
+    Control-l: clear-screen
 $endif
