@@ -32,6 +32,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'leafgarland/typescript-vim'
 
 filetype plugin indent on " Required!
 
