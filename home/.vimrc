@@ -33,6 +33,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 filetype plugin indent on " Required!
 
@@ -102,18 +104,26 @@ endfunction
 
 
 if has("gui_running")
-    " ----------------- "
-    " GUI-ONLY SETTINGS "
-    " ----------------- "
-    set lines=50 columns=80
+  " ----------------- "
+  " GUI-ONLY SETTINGS "
+  " ----------------- "
+  set lines=50 columns=80
 
-    if has("win32")
-        " Use Ricty 14pt for Windows
-        set guifont=Ricty\ Regular:h14
-    else
-        " Use Ricty 18pt for OS X
-        set guifont=Ricty\ Regular:h18
-    endif
+  if has("win32")
+    " Use Ricty 14pt for Windows
+    set guifont=Ricty\ Regular:h14
+
+    " Manually enable Powerline
+    " This seems to be required for Gvim for some reason
+    python from powerline.vim import setup as powerline_setup
+    python powerline_setup()
+    python del powerline_setup
+
+  else
+    " Use Ricty 18pt for OS X
+    set guifont=Ricty\ Regular:h18
+  endif
+
 else
     " --------------------- "
     " CONSOLE-ONLY SETTINGS "
@@ -153,9 +163,9 @@ set wildignore+=*.swp,*.DS_Store
 " Make it so bash commands opened in vi use bash syntax highlighting
 au BufRead,BufNewFile bash-fc-* set filetype=sh
 
-" Use double-width for ambiguous-width characters
-" This seems safest for Ricty
-set ambiwidth=double
+" Use single-width for ambiguous-width characters
+" Double messes up Powerline
+set ambiwidth=single
 
 " Set universal spell file
 set spellfile=~/.vim/spell/en.utf-8.add
@@ -403,10 +413,6 @@ set hidden
 " Make the 'cw' and like commands put a $ at the end instead of just deleting
 " the text and replacing it
 set cpoptions=ces$
-
-" Set the status line the way Derek likes it
-" Plugins aren't registering on Gvim, so skip for Windows GUIs
-set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 
 " tell VIM to always put a status line in, even if there is only one window
 set laststatus=2

@@ -214,3 +214,10 @@ else
     echo -e "Install with:"
     echo -e "git clone git://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick"
 fi
+
+# Enable Powerline
+# On new machines, Powerline first has to be installed with
+#     pip install git+https://github.com/Lokaltog/powerline
+if [ -f ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
+  ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
+fi
