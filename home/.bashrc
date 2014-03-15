@@ -55,6 +55,9 @@ else
 Clipboard integration and launchctl will not function in Tmux." && tmux'
         fi
 
+        # Alias mdfind so I can always use it with a path like find
+        alias mdfind='mdfind -onlyin '
+
     fi
     ###########################################################################
     if [[ "$OSTYPE" == linux* ]]; then
