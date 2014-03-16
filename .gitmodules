@@ -72,4 +72,5 @@
 	url = https://github.com/jnwhiteh/vim-golang
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
-	url = https://github.com/Lokaltog/powerline
+	url = https://github.com/aikinai/powerline
+	branch = solarized
