@@ -216,8 +216,45 @@ else
 fi
 
 # Enable Powerline
-# On new machines, Powerline first has to be installed with
-#     pip install git+https://github.com/Lokaltog/powerline
+# Attempt to build and install it if not available
 if [ -f ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
-  ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
+  if ! command -v powerline &>/dev/null; then
+    echo -e ""
+    echo -e "\x1B[0;31mPowerline not installed.\x1B[0m"
+    echo -e "Attempting to install from ~/.vim/bundle/powerline."
+    cd ~/.vim/bundle/powerline/
+    echo -e ""
+    echo -e "Building Powerline"
+    python setup.py build 2>&1 | \
+      while read line # Show dots instead of
+      do              # all the build output
+        echo -ne "\x1B[01;35m.\x1B[00m"
+      done
+      if [ $? -ne 0 ]; then
+        echo "\x1B[0;31mFailed building Powerline.\x1B[0m"
+      else
+        echo -e ""
+        echo -e ""
+        echo -e "Installing Powerline"
+        sudo python setup.py install 2>&1 | \
+          while read line # Show dots instead of
+          do              # all the build output
+            echo -ne "\x1B[01;35m.\x1B[00m"
+          done
+      if [ $? -ne 0 ]; then
+        echo "\x1B[0;31mFailed installing Powerline.\x1B[0m"
+      else
+        # Call Powerline initialization script
+        ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
+      fi
+    fi
+    cd - &> /dev/null # Go back where I started
+    echo -e ""
+    echo -e ""
+    echo -e "\x1B[0;32mDONE\x1B[0m"
+    echo -e ""
+  else
+    # Call Powerline initialization script
+    ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
+  fi
 fi
