@@ -154,7 +154,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/](\.(git|hg|svn)$)|src_jp',
+            \ 'dir':  '\v[\/](\.(git|hg|svn)$)|src_jp|js_api',
             \ 'file': '\v\.(exe|so|dll|psd|jpg|jpeg|png)$',
             \ }
 
