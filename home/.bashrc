@@ -34,9 +34,17 @@ else
         # Alias to launch p4merge from command line
         alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
 
-        # Add GNU coreutils to default path
-        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-        # Add GNU coreutils to defaul man path
+        # Set path with GNU coreutils and Homebrew programs first
+        PATH=""
+        PATH+="/usr/local/opt/coreutils/libexec/gnubin:"
+        PATH+="/usr/local/bin:"
+        PATH+="/usr/bin:"
+        PATH+="/bin:"
+        PATH+="/usr/sbin:"
+        PATH+="/sbin"
+        export PATH
+
+        # Add GNU coreutils to default man path
         export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
         # Replace cal with gcal if it's installed
