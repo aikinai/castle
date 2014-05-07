@@ -1,0 +1,16 @@
+# ======================================
+# Set up aliases
+# ======================================
+
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+
+
+# ======================================
+# Windows 7 Style Half- and Full-Screen
+# ======================================
+
+bind left:ctrl ${lefthalf}
+bind right:ctrl ${righthalf}
+bind up:ctrl ${full}
