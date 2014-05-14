@@ -41,7 +41,8 @@ else
         PATH+="/usr/bin:"
         PATH+="/bin:"
         PATH+="/usr/sbin:"
-        PATH+="/sbin"
+        PATH+="/sbin:"
+        PATH+="/usr/local/opt/ruby/bin"
         export PATH
 
         # Add GNU coreutils to default man path
