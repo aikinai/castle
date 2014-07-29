@@ -9,6 +9,16 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
     # Explicitly set terminal type so colors work correctly
     export TERM="xterm-256color"
 
+    # Use native Windows installation of Python and Ruby
+    if [ -d /cygdrive/c/Python27 ]; then
+      PATH+=":/cygdrive/c/Python27/"
+      PATH+=":/cygdrive/c/Python27/Scripts"
+    fi
+    if [ -d /cygdrive/c/Ruby200 ]; then
+      PATH+=":/cygdrive/c/Ruby200/bin/"
+    fi
+    export PATH
+
 ###############################################################################
 else
 ######## UNIX-ONLY ITEMS ######################################################
