@@ -19,6 +19,9 @@ if [[ "$OSTYPE" == 'cygwin' ]]; then
     fi
     export PATH
 
+    # Set Cygwin to use native Windows symlinks
+    export CYGWIN="${CYGWIN} winsymlinks:native"
+
 ###############################################################################
 else
 ######## UNIX-ONLY ITEMS ######################################################
