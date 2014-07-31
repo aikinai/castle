@@ -10,8 +10,11 @@ set editing-mode vi
 $if mode=vi
     # Insert Mode
     set keymap vi-insert
-    # Ctrl-J (shift-enter) to vi escape
+    # Map Ctrl-J (shift-enter) to vi escape
     "\C-J": vi-movement-mode
+    # Also map jj to vi escape
+    # (for systems like vSSH that don't send Ctrl-J with shift-enter)
+    "jj": vi-movement-mode
     # Enable ctrl-l to clear screen
     Control-l: clear-screen
 $endif
