@@ -40,6 +40,8 @@ filetype plugin indent on " Required!
 
 " General Settings
 
+let g:syntastic_typescript_tsc_args = '--target ES5'
+
 if !exists("vimpager") 
     set encoding=UTF8
     set fileencoding=UTF8
