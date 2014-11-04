@@ -51,6 +51,7 @@ else
         PATH=""
         PATH+="/usr/local/opt/coreutils/libexec/gnubin:"
         PATH+="/usr/local/bin:"
+        PATH+="/usr/local/sbin:"
         PATH+="/usr/bin:"
         PATH+="/bin:"
         PATH+="/usr/sbin:"
