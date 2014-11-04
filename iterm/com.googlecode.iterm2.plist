@@ -2069,14 +2069,6 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSColorPanelMode</key>
-	<string>1</string>
-	<key>NSColorPickerPageableNameListDefaults</key>
-	<string>1Base16</string>
-	<key>NSColorPickerSlidersDefaults</key>
-	<string>1</string>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -2096,41 +2088,32 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>302</string>
+		<string>304</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
-	<key>NSToolbar Configuration Terminal Toolbar</key>
-	<dict>
-		<key>TB Display Mode</key>
-		<integer>1</integer>
-		<key>TB Icon Size Mode</key>
-		<integer>1</integer>
-		<key>TB Is Shown</key>
-		<integer>0</integer>
-		<key>TB Size Mode</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame NSColorPanel</key>
-	<string>858 426 214 309 0 0 1366 746 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>396 174 924 485 0 0 1366 746 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>753 361 384 129 0 0 1366 746 </string>
+	<string>2508 239 924 485 1920 0 1600 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 4 730 742 0 0 1366 746 </string>
+	<string>0 4 1920 1174 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>636 4 730 742 0 0 1366 746 </string>
+	<string>1920 12 745 1166 1920 0 1600 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 4 730 742 0 0 1366 746 </string>
+	<string>1920 0 1600 1178 1920 0 1600 1178 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>1012 12 745 1166 0 0 1920 1178 </string>
+	<string>1920 0 1600 1178 1920 0 1600 1178 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>1924 34 745 1166 1920 0 1600 1200 </string>
+	<string>2653 12 745 1166 1920 0 1600 1178 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>704 12 745 1166 0 0 1920 1178 </string>
+	<string>1920 12 1600 1166 1920 0 1600 1178 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>1920 12 1600 1166 1920 0 1600 1178 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
+	<string>222 440 952 729 0 0 1920 1178 </string>
+	<key>NSWindow Frame iTerm Window 8</key>
+	<string>254 12 745 1166 0 0 1920 1178 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4959,7 +4942,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>~/.iterm/</string>
+	<string>~/.iterm</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -4975,7 +4958,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-01-15T19:49:22Z</date>
+	<date>2014-10-23T16:23:10Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -5009,7 +4992,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>Lucida Grande</string>
+	<string>.Lucida Grande UI</string>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WindowStyle</key>
@@ -5021,6 +5004,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140112</string>
+	<string>2.0</string>
 </dict>
 </plist>
