@@ -133,11 +133,6 @@ fi
     # Unicode gpg
     alias gpg='gpg2 --display-charset utf-8'
 
-    # Set Git SSL certificate
-    # .gitconfig can't expand ~/ or $HOME, so I have to put this here
-    # where it overrides the setting in .gitconfig anyway
-    export GIT_SSL_CERT=$HOME/.certs/gateway.pem
-
     # When changing directory small typos can be ignored by bash
     # for example, cd /vr/lgo/apaache would find /var/log/apache
     shopt -s cdspell
