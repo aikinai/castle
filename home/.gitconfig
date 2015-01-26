@@ -9,9 +9,6 @@
 [color]
 	ui = true
 
-[http]
-	sslVerify = false
-
 [merge]
 	keepBackup = false;
 	tool = p4merge
