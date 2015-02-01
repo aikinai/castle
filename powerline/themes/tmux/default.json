@@ -1,14 +1,11 @@
 {
-  "default_module": "powerline.segments.common",
-  "segment_data": {
-  },
   "segments": {
     "right": [
       {
-        "name": "date"
+        "function": "powerline.segments.common.time.date"
       },
       {
-        "name": "date",
+        "function": "powerline.segments.common.time.date",
         "draw_soft_divider": false,
         "args": {
           "format": " %H:%M",
@@ -16,8 +13,8 @@
         }
       },
       {
-        "name": "hostname"
+        "function": "powerline.segments.common.net.hostname"
       }
-        ]
+    ]
   }
 }
