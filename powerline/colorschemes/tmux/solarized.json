@@ -1,20 +1,20 @@
 {
   "name": "Solarized dark for tmux",
   "groups":               {
-  "activity_status":      { "fg": "solarized:yellow", "bg": "solarized:base03", "attrs": []       },
-  "bell_status":          { "fg": "solarized:red",    "bg": "solarized:base03", "attrs": []       },
-  "session:prefix":       { "fg": "solarized:base3",  "bg": "solarized:violet", "attrs": ["bold"] },
-  "active_window_status": { "fg": "solarized:base2",  "bg": "solarized:base03", "attrs": []       },
   "background":           { "fg": "solarized:base03", "bg": "solarized:base03", "attrs": []       },
-  "date":                 { "fg": "solarized:violet", "bg": "solarized:base02", "attrs": []       },
-  "hostname":             { "fg": "solarized:base3",  "bg": "solarized:green",  "attrs": []       },
-  "session":              { "fg": "solarized:base03", "bg": "solarized:base3",  "attrs": ["bold"] },
-  "time":                 { "fg": "solarized:yellow", "bg": "solarized:base02", "attrs": []       },
-  "time:divider":         { "fg": "solarized:yellow", "bg": "solarized:base02", "attrs": []       },
+  "session":              { "fg": "solarized:base03", "bg": "solarized:violet", "attrs": ["bold"] },
+  "session:prefix":       { "fg": "solarized:base3",  "bg": "solarized:green",  "attrs": ["bold"] },
   "window":               { "fg": "solarized:base0",  "bg": "solarized:base03", "attrs": []       },
-  "window:current":       { "fg": "solarized:green",  "bg": "solarized:blue",   "attrs": []       },
+  "window:current":       { "fg": "solarized:base03", "bg": "solarized:blue",   "attrs": []       },
   "window:divider":       { "fg": "solarized:base01", "bg": "solarized:base03", "attrs": []       },
   "window_name":          { "fg": "solarized:base3",  "bg": "solarized:blue",   "attrs": ["bold"] },
-  "window_status":        { "fg": "solarized:base2",  "bg": "solarized:base03", "attrs": []       }
+  "window_status":        { "fg": "solarized:base2",  "bg": "solarized:base03", "attrs": []       },
+  "activity_status":      { "fg": "solarized:yellow", "bg": "solarized:base03", "attrs": []       },
+  "bell_status":          { "fg": "solarized:red",    "bg": "solarized:base03", "attrs": []       },
+  "active_window_status": { "fg": "solarized:base2",  "bg": "solarized:base03", "attrs": []       },
+  "date":                 { "fg": "solarized:violet", "bg": "solarized:base02", "attrs": []       },
+  "time":                 { "fg": "solarized:yellow", "bg": "solarized:base02", "attrs": []       },
+  "time:divider":         { "fg": "solarized:yellow", "bg": "solarized:base02", "attrs": []       },
+  "hostname":             { "fg": "solarized:base3",  "bg": "solarized:green",  "attrs": []       }
   }
 }
