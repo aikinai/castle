@@ -2,7 +2,7 @@
   "name": "Solarized dark for tmux",
   "groups":               {
   "background":           { "fg": "solarized:base03", "bg": "solarized:base03", "attrs": []       },
-  "session":              { "fg": "solarized:base03", "bg": "solarized:violet", "attrs": ["bold"] },
+  "session":              { "fg": "solarized:base03", "bg": "solarized:green",  "attrs": ["bold"] },
   "session:prefix":       { "fg": "solarized:base3",  "bg": "solarized:green",  "attrs": ["bold"] },
   "window":               { "fg": "solarized:base0",  "bg": "solarized:base03", "attrs": []       },
   "window:current":       { "fg": "solarized:base03", "bg": "solarized:blue",   "attrs": []       },
@@ -15,6 +15,6 @@
   "date":                 { "fg": "solarized:violet", "bg": "solarized:base02", "attrs": []       },
   "time":                 { "fg": "solarized:yellow", "bg": "solarized:base02", "attrs": []       },
   "time:divider":         { "fg": "solarized:yellow", "bg": "solarized:base02", "attrs": []       },
-  "hostname":             { "fg": "solarized:base3",  "bg": "solarized:green",  "attrs": []       }
+  "hostname":             { "fg": "solarized:base03", "bg": "solarized:orange", "attrs": []       }
   }
 }
