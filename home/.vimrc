@@ -34,7 +34,7 @@ Bundle 'rking/ag.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'jnwhiteh/vim-golang'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 filetype plugin indent on " Required!
 
