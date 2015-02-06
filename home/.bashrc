@@ -243,8 +243,8 @@ fi
 
 # Enable Powerline
 # Attempt to build and install it if not available
-if [ -f ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
-  if ! command -v powerline &>/dev/null; then
+if [ -f ~/.vim/bundle/powerline/setup.py ]; then
+  if ! command -v powerline-config &>/dev/null; then
     echo -e ""
     echo -e "\x1B[0;31mPowerline not installed.\x1B[0m"
     echo -e "Attempting to install from ~/.vim/bundle/powerline."
@@ -269,9 +269,6 @@ if [ -f ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
           done
       if [ $? -ne 0 ]; then
         echo "\x1B[0;31mFailed installing Powerline.\x1B[0m"
-      else
-        # Call Powerline initialization script
-        ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
       fi
     fi
     cd - &> /dev/null # Go back where I started
@@ -279,8 +276,5 @@ if [ -f ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
     echo -e ""
     echo -e "\x1B[0;32mDONE\x1B[0m"
     echo -e ""
-  else
-    # Call Powerline initialization script
-    ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
   fi
 fi
