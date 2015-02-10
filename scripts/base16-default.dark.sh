@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Base16 Default - Console color setup script
 # Chris Kempson (http://chriskempson.com)
 

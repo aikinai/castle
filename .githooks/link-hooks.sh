@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script symlinks all files (except this one) in .githooks to .git/hooks
 #

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Base16 Monokai - Console color setup script
 # Wimer Hazenberg (http://www.monokai.nl)
 
