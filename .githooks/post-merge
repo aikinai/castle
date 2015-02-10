@@ -1,5 +1,5 @@
-#!/bin/bash
-#
+#!/usr/bin/env bash
+
 # Checks to see if authorized_keys file was modified in the last merge and 
 # resets the permissions to 600 if it was.
 #
