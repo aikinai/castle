@@ -131,7 +131,12 @@ fi
     # Set default editor to Vim
     export EDITOR=vim
 
-    VLESS=$(find /usr/share/vim -name 'less.sh')
+    # Use Vim's less.sh for less if it's available
+    if [ -d /usr/local/share/vim ]; then
+      VLESS=$(find /usr/local/share/vim -name 'less.sh')
+    elif [ -d /usr/share/vim ]; then
+      VLESS=$(find /usr/share/vim -name 'less.sh')
+    fi
     if [ ! -z $VLESS ]; then
         alias less=$VLESS
     fi
