@@ -34,6 +34,7 @@ Bundle 'rking/ag.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'tommcdo/vim-lion'
 
 filetype plugin indent on " Required!
 
