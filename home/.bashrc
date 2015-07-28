@@ -38,40 +38,50 @@ else
     if [[ "$OSTYPE" == darwin* ]]; then
     ######## OS X-ONLY ITEMS ##################################################
 
-        # Advanced Bash completion
-        # Needs brew bash-completion package installed
-        if [ -f /usr/local/etc/bash_completion ]; then
-            . /usr/local/etc/bash_completion
+        # Find out if Homebrew is installed in ~/.homebrew or /usr/local
+        if [ -f ${HOME}/.homebrew/bin/brew ]; then
+          HOMEBREW="${HOME}/.homebrew"
+        elif [ -f /usr/local/bin/brew ]; then
+          HOMEBREW="/usr/local"
+        fi
+
+        # Set up environment using Homebrew utilities
+        if [ -n $HOMEBREW ]; then
+          # Advanced Bash completion
+          # Needs brew bash-completion package installed
+          if [ -f ${HOMEBREW}/etc/bash_completion ]; then
+              . ${HOMEBREW}/etc/bash_completion
+          fi
+
+          # Set PATH with GNU utilities and Homebrew programs first
+          PATH=""
+          PATH+="${HOMEBREW}/opt/gnu-sed/libexec/gnubin:"
+          PATH+="${HOMEBREW}/opt/coreutils/libexec/gnubin:"
+          PATH+="${HOMEBREW}/opt/ruby/bin:"
+          PATH+="${HOMEBREW}/bin:"
+          PATH+="${HOMEBREW}/sbin:"
+          PATH+="/usr/bin:"
+          PATH+="/bin:"
+          PATH+="/usr/sbin:"
+          PATH+="/sbin"
+          export PATH
+
+          # Set MANPATH with GNU utilities and Homebrew programs first
+          MANPATH=""
+          MANPATH+="${HOMEBREW}/opt/gnu-sed/libexec/gnuman:"
+          MANPATH+="${HOMEBREW}/opt/coreutils/libexec/gnuman:"
+          MANPATH+="${HOMEBREW}/share/man:"
+          MANPATH+="/usr/share/man"
+          export MANPATH
+
+          # Replace cal with gcal if it's installed
+          if [ -f ${HOMEBREW}/bin/gcal ]; then
+              alias cal='gcal'
+          fi
         fi
 
         # Alias to launch p4merge from command line
         alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
-
-        # Set PATH with GNU utilities and Homebrew programs first
-        PATH=""
-        PATH+="/usr/local/opt/gnu-sed/libexec/gnubin:"
-        PATH+="/usr/local/opt/coreutils/libexec/gnubin:"
-        PATH+="/usr/local/bin:"
-        PATH+="/usr/local/sbin:"
-        PATH+="/usr/bin:"
-        PATH+="/bin:"
-        PATH+="/usr/sbin:"
-        PATH+="/sbin:"
-        PATH+="/usr/local/opt/ruby/bin"
-        export PATH
-
-        # Set MANPATH with GNU utilities and Homebrew programs first
-        MANPATH=""
-        MANPATH+="/usr/local/opt/gnu-sed/libexec/gnuman:"
-        MANPATH+="/usr/local/opt/coreutils/libexec/gnuman:"
-        MANPATH+="/usr/local/share/man:"
-        MANPATH+="/usr/share/man"
-        export MANPATH
-
-        # Replace cal with gcal if it's installed
-        if [ -f /usr/local/bin/gcal ]; then
-            alias cal='gcal'
-        fi
 
         # Use OS X specific config file for Tmux
         if command -v reattach-to-user-namespace &>/dev/null; then
@@ -124,8 +134,8 @@ fi
     export EDITOR=vim
 
     # Use Vim's less.sh for less if it's available
-    if [ -d /usr/local/share/vim ]; then
-      VLESS=$(find /usr/local/share/vim -name 'less.sh')
+    if [ -d ${HOMEBREW}/share/vim ]; then
+      VLESS=$(find ${HOMEBREW}/share/vim -name 'less.sh')
     elif [ -d /usr/share/vim ]; then
       VLESS=$(find /usr/share/vim -name 'less.sh')
     fi
