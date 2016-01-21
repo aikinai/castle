@@ -1,6 +1,6 @@
 [user]
-	name = Alan
-	email = alan.rogers@nst.nintendo.com
+	name = Alan Rogers
+	email = alanrogers@google.com
 
 [core]
 	excludesfile = ~/.gitignore
