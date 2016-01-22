@@ -1,0 +1,9 @@
+backup/
+plugged/
+spell/
+swap/
+undo/
+autoload/plug.vim
+snapshot.vim
+viminfo
+.netrwhist
