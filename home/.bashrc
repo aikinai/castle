@@ -94,6 +94,10 @@ Clipboard integration and launchctl will not function in Tmux." && tmux'
         # Alias mdfind so I can always use it with a path like find
         alias mdfind='mdfind -onlyin '
 
+        # Set LANG and LC_ALL to fix Powerline
+        export LANG=en_US.UTF-8
+        export LC_ALL=en_US.UTF-8
+
     fi
     ###########################################################################
     if [[ "$OSTYPE" == linux* ]]; then
