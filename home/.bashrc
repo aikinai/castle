@@ -63,6 +63,7 @@ else
           PATH+="${HOMEBREW}/opt/ruby/bin:"
           PATH+="${HOMEBREW}/bin:"
           PATH+="${HOMEBREW}/sbin:"
+          PATH+="/usr/local/bin:"
           PATH+="/usr/bin:"
           PATH+="/bin:"
           PATH+="/usr/sbin:"
