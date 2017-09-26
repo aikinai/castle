@@ -29,6 +29,9 @@ else
     # Color and human-readable prefixes in ls
     alias ls='ls -h --color=auto --quoting-style=literal'
 
+    # Safety first
+    alias mv='mv -vi'
+
     # Enable programmable completion features
     if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
         . /etc/bash_completion
