@@ -60,6 +60,7 @@ else
           PATH=""
           PATH+="${HOMEBREW}/opt/gnu-sed/libexec/gnubin:"
           PATH+="${HOMEBREW}/opt/coreutils/libexec/gnubin:"
+          PATH+="${HOMEBREW}/opt/python/libexec/bin:"
           PATH+="${HOMEBREW}/opt/ruby/bin:"
           PATH+="${HOMEBREW}/bin:"
           PATH+="${HOMEBREW}/sbin:"
