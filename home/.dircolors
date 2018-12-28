@@ -250,6 +250,8 @@ EXEC 01;31  # Unix
 ### Multimedia formats
 
 # Image
+.arw 33
+.ARW 33
 .bmp 33
 .cgm 33
 .dl 33
