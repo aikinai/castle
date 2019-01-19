@@ -305,3 +305,6 @@ if [ -f ~/.vim/bundle/powerline/setup.py ]; then
     echo -e ""
   fi
 fi
+
+# Alias for VLC
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
