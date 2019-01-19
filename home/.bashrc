@@ -39,7 +39,7 @@ else
 
     ###########################################################################
     if [[ "$OSTYPE" == darwin* ]]; then
-    ######## OS X-ONLY ITEMS ##################################################
+    ######## MACOS-ONLY ITEMS ##################################################
 
         # Find out if Homebrew is installed in ~/.homebrew or /usr/local
         if [ -f ${HOME}/.homebrew/bin/brew ]; then
@@ -83,6 +83,10 @@ else
           if [ -f ${HOMEBREW}/bin/gcal ]; then
               alias cal='gcal'
           fi
+
+          # Add Homebrew Vim share directory to Vim runtimepath
+          export VIMRUNTIME="$(brew --prefix vim)/share/vim/vim81/"
+
         fi
 
         # Alias to launch p4merge from command line
