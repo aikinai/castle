@@ -196,6 +196,9 @@ fi
     HISTSIZE=50000
     HISTFILESIZE=50000
 
+    # Write history after each command
+    export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
     # Check the window size after each command and, if necessary,
     # Update the values of LINES and COLUMNS.
     shopt -s checkwinsize
@@ -251,8 +254,6 @@ fi
                 eval `dircolors -b` # Default colors, just in case
             fi
         fi
-
-        export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
     fi
 
