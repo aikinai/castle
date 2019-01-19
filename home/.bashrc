@@ -107,6 +107,12 @@ Clipboard integration and launchctl will not function in Tmux." && tmux'
         export LANG=en_US.UTF-8
         export LC_ALL=en_US.UTF-8
 
+        # Load iTerm shell integration
+        export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX="YES"
+        if [ -f ${HOME}/.iterm/iterm2_shell_integration.bash ]; then
+          source "${HOME}/.iterm/iterm2_shell_integration.bash"
+        fi
+
     fi
     ###########################################################################
     if [[ "$OSTYPE" == linux* ]]; then
