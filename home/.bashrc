@@ -85,7 +85,7 @@ else
           fi
 
           # Add Homebrew Vim share directory to Vim runtimepath
-          export VIMRUNTIME="$(brew --prefix vim)/share/vim/vim81/"
+          export VIMRUNTIME="$(brew --prefix vim)/share/vim/vim82/"
 
         fi
 
