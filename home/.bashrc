@@ -87,6 +87,9 @@ else
           # Add Homebrew Vim share directory to Vim runtimepath
           export VIMRUNTIME="$(brew --prefix vim)/share/vim/vim82/"
 
+          # Export Tesseract language data path
+          export TESSDATA_PREFIX="$(brew --prefix)/share/tessdata/" 
+
         fi
 
         # Alias to launch p4merge from command line
