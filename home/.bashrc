@@ -86,10 +86,10 @@ else
           fi
 
           # Add Homebrew Vim share directory to Vim runtimepath
-          export VIMRUNTIME="$(brew --prefix vim)/share/vim/vim82/"
+          export VIMRUNTIME="${HOMEBREW}/opt/vim/share/vim/vim82/"
 
           # Export Tesseract language data path
-          export TESSDATA_PREFIX="$(brew --prefix)/share/tessdata/" 
+          export TESSDATA_PREFIX="${HOMEBREW}/share/tessdata/"
 
         fi
 
