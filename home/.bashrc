@@ -58,6 +58,7 @@ else
 
           # Set PATH with GNU utilities and Homebrew programs first
           PATH=""
+          PATH+="${HOME}/Programs/Selenium:"
           PATH+="${HOMEBREW}/opt/gnu-sed/libexec/gnubin:"
           PATH+="${HOMEBREW}/opt/coreutils/libexec/gnubin:"
           PATH+="${HOMEBREW}/opt/python/libexec/bin:"
