@@ -41,6 +41,9 @@ else
     if [[ "$OSTYPE" == darwin* ]]; then
     ######## MACOS-ONLY ITEMS ##################################################
 
+        # Surpress warning from MacOS that zsh is the new default shell
+        export BASH_SILENCE_DEPRECATION_WARNING=1
+
         # Find out if Homebrew is installed in ~/.homebrew or /usr/local
         if [ -f ${HOME}/.homebrew/bin/brew ]; then
           HOMEBREW="${HOME}/.homebrew"
