@@ -47,8 +47,8 @@ else
         # Find out if Homebrew is installed in ~/.homebrew or /usr/local
         if [ -f ${HOME}/.homebrew/bin/brew ]; then
           HOMEBREW="${HOME}/.homebrew"
-        elif [ -f /usr/local/bin/brew ]; then
-          HOMEBREW="/usr/local"
+        elif [ -f /opt/homebrew/bin/brew ]; then
+          HOMEBREW="/opt/homebrew"
         fi
 
         # Set up environment using Homebrew utilities
