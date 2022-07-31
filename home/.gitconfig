@@ -33,3 +33,7 @@
 	skipSubmitEdit = true
 [alias]
     history = log --graph --full-history --branches --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+[credential]
+	helper = osxkeychain
+[http]
+	postBuffer = 157286400
