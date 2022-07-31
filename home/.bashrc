@@ -321,3 +321,6 @@ fi
 
 # Alias for VLC
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+
+# Setup thefuck
+eval $(thefuck --alias)
