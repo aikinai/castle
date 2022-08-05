@@ -32,11 +32,6 @@ else
     # Safety first
     alias mv='mv -vi'
 
-    # Enable programmable completion features
-    if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-        . /etc/bash_completion
-    fi
-
     ###########################################################################
     if [[ "$OSTYPE" == darwin* ]]; then
     ######## MACOS-ONLY ITEMS ##################################################
@@ -57,9 +52,8 @@ else
         if [ -n $HOMEBREW ]; then
           # Advanced Bash completion
           # Needs brew bash-completion package installed
-          if [ -f ${HOMEBREW}/etc/bash_completion ]; then
-              . ${HOMEBREW}/etc/bash_completion
-          fi
+          [[ -r "${HOMEBREW}/etc/profile.d/bash_completion.sh" ]] && \
+            . "${HOMEBREW}/etc/profile.d/bash_completion.sh"
 
           # Set PATH with GNU utilities and Homebrew programs first
           PATH=""
