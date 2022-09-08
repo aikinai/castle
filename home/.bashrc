@@ -32,6 +32,9 @@ else
     # Safety first
     alias mv='mv -vi'
 
+    # Source Bash pre-exec
+    [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
     ###########################################################################
     if [[ "$OSTYPE" == darwin* ]]; then
     ######## MACOS-ONLY ITEMS ##################################################
@@ -323,3 +326,6 @@ alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 # Setup thefuck
 eval $(thefuck --alias)
+
+# Setup atuin
+eval "$(atuin init bash)"
