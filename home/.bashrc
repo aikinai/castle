@@ -177,11 +177,6 @@ fi
     # for example, cd /vr/lgo/apaache would find /var/log/apache
     shopt -s cdspell
 
-    # Ignore some controlling instructions
-    # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
-    # The '&' is a special pattern which suppresses duplicate entries.
-    export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
-
     # Set locale so Japanese works
     export LANG=en_US.UTF-8
 
@@ -192,6 +187,13 @@ fi
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+
+    ########## History ##########
+
+    # Ignore some controlling instructions
+    # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
+    # The '&' is a special pattern which suppresses duplicate entries.
+    export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
 
     # Don't put duplicate lines or lines starting with a space in the history.
     # See bash(1) for more options
@@ -206,6 +208,8 @@ fi
 
     # Write history after each command
     export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+    #############################
 
     # Check the window size after each command and, if necessary,
     # Update the values of LINES and COLUMNS.
