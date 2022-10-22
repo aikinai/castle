@@ -324,8 +324,8 @@ fi
 # Alias for VLC
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
-# Setup thefuck
-eval $(thefuck --alias)
 
-# Setup atuin
-eval "$(atuin init bash)"
+# Setup thefuck
+if [ -f ${HOMEBREW}/bin/thefuck ]; then
+  eval $(thefuck --alias)
+fi
