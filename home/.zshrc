@@ -23,53 +23,11 @@ fi
 
 # Set up environment using Homebrew utilities
 if [ -n $HOMEBREW ]; then
-  # Advanced Bash completion
-  # Needs brew bash-completion package installed
-  [[ -r "${HOMEBREW}/etc/profile.d/bash_completion.sh" ]] && \
-    . "${HOMEBREW}/etc/profile.d/bash_completion.sh"
-
-  # Set PATH with GNU utilities and Homebrew programs first
-  PATH=""
-  PATH+="${HOME}/Programs/Scripts/MacOS:"
-  PATH+="${HOME}/Programs/Scripts/Photos:"
-  PATH+="${HOME}/Programs/Scripts/Encoding:"
-  PATH+="${HOME}/Programs/Selenium:"
-  PATH+="${HOMEBREW}/opt/gnu-sed/libexec/gnubin:"
-  PATH+="${HOMEBREW}/opt/coreutils/libexec/gnubin:"
-  PATH+="${HOMEBREW}/opt/findutils/libexec/gnubin:"
-  PATH+="${HOMEBREW}/opt/python/libexec/bin:"
-  PATH+="${HOMEBREW}/opt/perl/bin:"
-  PATH+="${HOMEBREW}/opt/ruby/bin:"
-  PATH+="${HOMEBREW}/bin:"
-  PATH+="${HOMEBREW}/sbin:"
-  PATH+="/usr/local/bin:"
-  PATH+="/usr/bin:"
-  PATH+="/bin:"
-  PATH+="/usr/sbin:"
-  PATH+="/sbin"
-  export PATH
-
-  # Set MANPATH with GNU utilities and Homebrew programs first
-  MANPATH=""
-  MANPATH+="${HOMEBREW}/opt/gnu-sed/libexec/gnuman:"
-  MANPATH+="${HOMEBREW}/opt/coreutils/libexec/gnuman:"
-  MANPATH+="${HOMEBREW}/opt/findutils/libexec/gnuman:"
-  MANPATH+="${HOMEBREW}/share/man:"
-  MANPATH+="/usr/share/man"
-  export MANPATH
 
   # Replace cal with gcal if it's installed
   if [ -f ${HOMEBREW}/bin/gcal ]; then
     alias cal='gcal'
   fi
-
-  # Add Homebrew Vim share directory to Vim runtimepath
-  LATESTVIM=$(ls ${HOMEBREW}/opt/vim/share/vim/ | sort | tail -n 1)
-  export VIMRUNTIME="${HOMEBREW}/opt/vim/share/vim/${LATESTVIM}/"
-
-  # Export Tesseract language data path
-  export TESSDATA_PREFIX="${HOMEBREW}/share/tessdata/"
-
 
   # Set Solarized dircolors (ls colors)
   if command -v dircolors &>/dev/null; then
