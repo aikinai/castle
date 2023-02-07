@@ -24,6 +24,13 @@ fi
 # Set up environment using Homebrew utilities
 if [ -n $HOMEBREW ]; then
 
+  # Add Homebrew Vim share directory to Vim runtimepath
+  LATESTVIM=$(ls ${HOMEBREW}/opt/vim/share/vim/ | sort | tail -n 1)
+  export VIMRUNTIME="${HOMEBREW}/opt/vim/share/vim/${LATESTVIM}/"
+
+  # Export Tesseract language data path
+  export TESSDATA_PREFIX="${HOMEBREW}/share/tessdata/"
+
   # Replace cal with gcal if it's installed
   if [ -f ${HOMEBREW}/bin/gcal ]; then
     alias cal='gcal'
