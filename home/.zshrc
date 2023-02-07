@@ -36,6 +36,7 @@ if [ -n $HOMEBREW ]; then
   PATH+="${HOME}/Programs/Selenium:"
   PATH+="${HOMEBREW}/opt/gnu-sed/libexec/gnubin:"
   PATH+="${HOMEBREW}/opt/coreutils/libexec/gnubin:"
+  PATH+="${HOMEBREW}/opt/findutils/libexec/gnubin:"
   PATH+="${HOMEBREW}/opt/python/libexec/bin:"
   PATH+="${HOMEBREW}/opt/perl/bin:"
   PATH+="${HOMEBREW}/opt/ruby/bin:"
@@ -52,6 +53,7 @@ if [ -n $HOMEBREW ]; then
   MANPATH=""
   MANPATH+="${HOMEBREW}/opt/gnu-sed/libexec/gnuman:"
   MANPATH+="${HOMEBREW}/opt/coreutils/libexec/gnuman:"
+  MANPATH+="${HOMEBREW}/opt/findutils/libexec/gnuman:"
   MANPATH+="${HOMEBREW}/share/man:"
   MANPATH+="/usr/share/man"
   export MANPATH
