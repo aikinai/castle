@@ -173,3 +173,12 @@ ZVM_CURSOR_STYLE_ENABLED=false
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Load fzf configuration
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Set fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --follow --strip-cwd-prefix'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type directory --follow --strip-cwd-prefix'
+
