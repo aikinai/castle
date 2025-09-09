@@ -36,10 +36,11 @@ if [ -n $HOMEBREW ]; then
     alias cal='gcal'
   fi
 
+  # load dircolors
   # Set Solarized dircolors (ls colors)
   if command -v dircolors &>/dev/null; then
     if [ -f ~/.dircolors ]; then
-      eval `dircolors ~/.dircolors` # Solarized colors
+      eval `dircolors ~/.dircolors` # Gruvbox Dark Hard now
     else
       eval `dircolors -b` # Default colors, just in case
     fi
@@ -134,9 +135,9 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins+=(zsh-vi-mode)
+plugins=(git brew z macos zsh-vi-mode)
 
+DISABLE_LS_COLORS=true # I want to make my own alias
 source $ZSH/oh-my-zsh.sh
 
 # Always starting with insert mode for each command line
@@ -182,3 +183,16 @@ export FZF_DEFAULT_COMMAND='fd --follow --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type directory --follow --strip-cwd-prefix'
 
+# Suggestions and highlighting
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Aliases
+unalias ls 2>/dev/null
+ls() {
+  local ignores=()
+  while IFS= read -r line; do
+    [[ -n "$line" ]] && ignores+=("--ignore=$line")
+  done < ~/.lsignore
+  command ls --color=auto -h "${ignores[@]}" "$@"
+}
