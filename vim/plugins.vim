@@ -19,5 +19,5 @@ Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
 Plug 'rking/ag.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
