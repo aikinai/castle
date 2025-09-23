@@ -16,7 +16,7 @@
 # on Ghostty's website, at https://ghostty.org/docs/config.
 
 # Theme and background
-theme = GruvboxDarkHard
+theme = "Gruvbox Dark Hard"
 background-opacity = .95
 background-blur = true
 
