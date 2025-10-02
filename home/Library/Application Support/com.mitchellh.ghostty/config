@@ -54,4 +54,4 @@ keybind = performable:ctrl+v=paste_from_clipboard
 
 # Shell integration
 shell-integration = detect
-shell-integration-features = ssh-terminfo,ssh-env,sudo
+shell-integration-features = sudo
