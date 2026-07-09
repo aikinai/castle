@@ -1,30 +1,5 @@
-######## MULTI-PLATFORM ITEMS #################################################
-
-# Just source .bashrc
-if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
-fi
-
-###############################################################################
-if [[ "$OSTYPE" == 'cygwin' ]]; then
-######## WINDOWS-ONLY ITEMS ###################################################
-
-    :
-
-###############################################################################
-else
-######## UNIX-ONLY ITEMS ######################################################
-
-    :
-
-    ###########################################################################
-    if [[ "$OSTYPE" == linux* ]]; then
-    ######## LINUX-ONLY ITEMS #################################################
-
-        # # Make byobu run on login
-        # _byobu_sourced=1 . /usr/bin/byobu-launch
-
-        :
-
-    fi
+# Login bash: just load .bashrc
+if [[ -f "$HOME/.bashrc" ]]; then
+  # shellcheck source=/dev/null
+  source "$HOME/.bashrc"
 fi

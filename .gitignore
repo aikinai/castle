@@ -2,6 +2,8 @@ config/iterm2
 config/thefuck
 config/rclone
 home/.tmux/plugins/
+
+# Oh My Zsh and custom plugins are cloned by bootstrap.sh, not vendored in git.
 oh-my-zsh/
-oh-my-zsh-custom/plugins/zsh-vi-mode/
-oh-my-zsh-custom/themes/powerlevel10k/
+oh-my-zsh-custom/plugins/
+oh-my-zsh-custom/themes/

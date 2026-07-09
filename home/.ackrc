@@ -1,3 +1,0 @@
-# Ignore common directories
---ignore-dir=.git
---ignore-dir=bin

@@ -21,7 +21,7 @@
 	keepBackup = false
 
 [diff]
-	algorithm = patience
+	algorithm = histogram
 [difftool]
 	prompt = false
 

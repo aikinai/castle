@@ -1,13 +1,5 @@
-" This is the main plugin list, sourced by modules/plugins.vim
-" Configuration goes in the appropriate modules/plugins/*.vim file.
-" So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
-
-function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !./install.py
-  endif
-endfunction
-
+" Plugin list for vim-plug (see modules/plugins.vim).
+" Per-plugin config lives in modules/plugins/*.vim.
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
@@ -20,4 +12,3 @@ Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
 Plug 'rking/ag.vim'
 Plug 'morhetz/gruvbox'
-Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
