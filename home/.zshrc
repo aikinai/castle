@@ -133,5 +133,5 @@ if [[ -d ~/.homesick/repos/homeshick ]]; then
   alias homesick=homeshick
 fi
 
-# Machine-local overrides (not in git), e.g. Faron /usr/local ffmpeg path, uv env.
+# Optional one-off overrides (not required; prefer putting shared stuff in the castle).
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
