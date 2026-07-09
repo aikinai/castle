@@ -99,15 +99,24 @@ if command -v dircolors &>/dev/null; then
   fi
 fi
 
-# GNU ls with optional ~/.lsignore patterns (requires coreutils on PATH).
+# Prefer GNU ls so --color/--ignore work (coreutils gnubin or brew `gls`).
 ls() {
-  local ignores=()
+  local -a ls_cmd ignores
+  if command ls --version &>/dev/null 2>&1; then
+    ls_cmd=(command ls)
+  elif (( $+commands[gls] )); then
+    ls_cmd=(command gls)
+  else
+    # BSD/macOS ls — no --ignore support
+    command ls -hG "$@"
+    return
+  fi
   if [[ -f ~/.lsignore ]]; then
     while IFS= read -r line; do
       [[ -n "$line" ]] && ignores+=("--ignore=$line")
     done < ~/.lsignore
   fi
-  command ls --color=auto -h "${ignores[@]}" "$@"
+  "${ls_cmd[@]}" --color=auto -h "${ignores[@]}" "$@"
 }
 
 # ┌───────────────────────────────────────────────────────────────────┐
