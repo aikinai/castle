@@ -7,3 +7,9 @@ home/.tmux/plugins/
 oh-my-zsh/
 oh-my-zsh-custom/plugins/
 oh-my-zsh-custom/themes/
+
+# Machine-local media / tool configs (e.g. Faron *arr stack)
+config/Prowlarr/
+config/Radarr/
+config/Sonarr/
+config/uv/
