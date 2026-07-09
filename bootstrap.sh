@@ -84,6 +84,12 @@ install_oh_my_zsh() {
     "$ZSH_CUSTOM_DIR/plugins/zsh-autosuggestions"
   clone_or_update https://github.com/zsh-users/zsh-syntax-highlighting.git \
     "$ZSH_CUSTOM_DIR/plugins/zsh-syntax-highlighting"
+
+  # Prebuilt gitstatusd for p10k VCS segment (clone does not always include it).
+  local gitstatus_install="$ZSH_CUSTOM_DIR/themes/powerlevel10k/gitstatus/install"
+  if [[ -x "$gitstatus_install" ]]; then
+    "$gitstatus_install" -f || warn "gitstatus install failed (p10k git segment may show errors)"
+  fi
 }
 
 set_default_shell() {

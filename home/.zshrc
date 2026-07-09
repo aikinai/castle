@@ -134,4 +134,7 @@ if [[ -d ~/.homesick/repos/homeshick ]]; then
 fi
 
 # Optional one-off overrides (not required; prefer putting shared stuff in the castle).
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+# Use `if` so a missing file does not leave $? = 1 (p10k would show "1 ✘" on login).
+if [[ -f ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
