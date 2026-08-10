@@ -133,6 +133,13 @@ if [[ -d ~/.homesick/repos/homeshick ]]; then
   alias homesick=homeshick
 fi
 
+# Route interactive SSH through `grok wrap` so OSC 52 clipboard and terminal
+# modes work better on the far side. Bypass with `command ssh ...` when needed
+# (e.g. ssh -f, ControlPersist, or OpenSSH ~^Z local suspend).
+if (( $+commands[grok] )); then
+  alias ssh='grok wrap ssh'
+fi
+
 # Optional one-off overrides (not required; prefer putting shared stuff in the castle).
 # Use `if` so a missing file does not leave $? = 1 (p10k would show "1 ✘" on login).
 if [[ -f ~/.zshrc.local ]]; then
